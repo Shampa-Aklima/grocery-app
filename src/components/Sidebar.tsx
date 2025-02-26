@@ -4,19 +4,21 @@ import { Button } from "@/components/ui/button";
 
 const categories = [
   "Beverages",
+  "Biscuits & Snacks",
   "Bread & Bakery",
   "Breakfast & Dairy",
   "Fruits & Vegetables",
+  "Frozen Foods",
   "Grocery & Staples",
   "Meat & Seafood",
 ];
 
 const Sidebar = () => {
   return (
-    <div className=" mx-auto flex space-x-6">
+    <div className=" mx-auto flex-col py-2">
       {/* Left Sidebar (270px) */}
-      <div className="w-[270px] space-y-6">
-        <div className="space-y-2">
+      <div className="w-[270px] h-[513px] space-y-6">
+        <div className="space-y-2 border-2 p-4">
           {categories.map((category) => (
             <Link
               key={category}
@@ -27,25 +29,25 @@ const Sidebar = () => {
             </Link>
           ))}
         </div>
-        <div className="space-y-4">
-          <div className="bg-gray-100 p-4 rounded-lg">
-            <h3 className="font-semibold mb-2">Special Organic Beans Burger</h3>
-            <p className="text-primary font-bold">$14.99</p>
-            <Image
-              src="/placeholder.svg"
-              alt="Burger"
-              width={400}
-              height={400}
-              className="w-full h-auto mt-2"
-            />
-          </div>
-          <div className="bg-gray-100 p-4 rounded-lg">
-            <h3 className="font-semibold mb-2">
-              Freshest products on every hour.
-            </h3>
-            <p className="text-primary font-bold">$14.99</p>
-            <Button className="mt-2 w-full">Shop Now</Button>
-          </div>
+      </div>
+      <div className="space-y-4  mt-4 mr-12">
+        <div className="w-[270px] h-[403px] p-4 m-0 space-y-6 bg-[#C4C4C4]  rounded-lg">
+          <p>Bacola Natural Foods</p>
+          <h3 className="font-semibold mb-2">Special Organic</h3>
+          <h3 className="font-semibold mb-2">Roats Burger</h3>
+          <p className="text-primary font-bold">only-from</p>
+          <span>$14.99</span>
+        </div>
+      </div>
+
+      <div className="space-y-4 mt-4 mr-8">
+        <div className="w-[270px] h-[403px] space-y-6 bg-[#C4C4C4] p-4 rounded-lg">
+          <p>Bacola Natural Foods</p>
+          <h3 className="font-semibold mb-2">Best bakery products</h3>
+          <h3 className="font-semibold mb-2">Freshest products</h3>
+          <span>every hour.</span>
+          <p className="text-primary font-bold">only-from</p>
+          <span>$14.99</span>
         </div>
       </div>
     </div>

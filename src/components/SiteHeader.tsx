@@ -1,7 +1,5 @@
 "use client";
 
-"use client";
-
 import Link from "next/link";
 import Image from "next/image";
 import { Jersey_25 } from "next/font/google";
@@ -111,7 +109,7 @@ const SiteHeader = () => {
                 <Menu className="h-5 w-5 mr-2" />
                 ALL CATEGORIES
               </Button>
-              <Button variant="default" className="hidden lg:flex">
+              <Button variant="default" className="hidden lg:flex  bg-[#35AFA0] border-1">
                 ALL CATEGORIES
               </Button>
               <div
