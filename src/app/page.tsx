@@ -1,9 +1,11 @@
+import Sidebar from "@/components/Sidebar";
+import HeroSection from "@/components/HeroSection ";
 
-
-export default function Home() {
-  return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      
-    </div>
-  );
-}
+const HomePage=()=>{
+  return(
+    <div className="w-full max-w-[1200px] mx-auto flex space-x-6 mt-16">
+    <Sidebar/> 
+    <HeroSection/>
+  </div>
+  )}
+export default HomePage
