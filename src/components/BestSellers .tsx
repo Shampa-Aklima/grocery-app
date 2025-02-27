@@ -1,90 +1,100 @@
-import Image from "next/image";
-import { Button } from "@/components/ui/button";
-import { ChevronLeft, ChevronRight, Star } from "lucide-react";
+"use client"
 
-const bestSellers = [
+import { ChevronLeft, ChevronRight } from "lucide-react"
+import { useRef } from "react"
+import { Swiper, SwiperSlide } from "swiper/react"
+import { Navigation } from "swiper/modules"
+import { ProductCard } from "./ProductCard"
+import "swiper/css"
+import "swiper/css/navigation"
+
+const products = [
   {
     id: 1,
-    name: "All Natural Italian-Style Chicken Meatballs",
-    price: 27.95,
-    rating: 4.5,
-    image: "/placeholder.svg",
+    title: "All Natural Italian-Style Chicken Meatballs",
+    price: 27.25,
+    originalPrice: 34.75,
+    discount: 20,
+    rating: 4,
+    reviews: 1,
+    image: "/placeholder.svg?height=220&width=220",
   },
   {
     id: 2,
-    name: "Angie's Boomchickapop Sweet & Salty Kettle Corn",
-    price: 32.29,
-    rating: 4.0,
-    image: "/placeholder.svg",
+    title: "Angie's Boomchickapop Sweet & Salty Kettle Corn",
+    price: 3.29,
+    originalPrice: 4.29,
+    discount: 23,
+    rating: 5,
+    reviews: 1,
+    image: "/placeholder.svg?height=220&width=220",
   },
   {
     id: 3,
-    name: "Field Roast Chao Cheese Creamy Original",
+    title: "Field Roast Chao Cheese Creamy Original",
     price: 19.5,
-    rating: 4.0,
-    image: "/placeholder.svg",
+    originalPrice: 24.0,
+    discount: 19,
+    rating: 5,
+    reviews: 7,
+    image: "/placeholder.svg?height=220&width=220",
   },
   {
     id: 4,
-    name: "Blue Diamond Almonds Lightly Salted",
+    title: "Blue Diamond Almonds Lightly Salted",
     price: 11.68,
-    rating: 4.0,
-    image: "/placeholder.svg",
+    rating: 4,
+    reviews: 1,
+    image: "/placeholder.svg?height=220&width=220",
   },
-];
 
-const BestSellers = () => {
+]
+
+const BestSellers=() =>{
+  const swiperRef = useRef(null)
+
   return (
-    <div className="w-full max-w-[1200px] mx-auto mb-8">
-      <div className="flex justify-between items-center mb-4">
-        <div className="flex flex-col">
-          <h2 className=" text-xl font-bold">BEST SELLERS</h2>
-          <p>Do not miss the current offers until the end of March.</p>
+    
+      <div className="mb-10">
+        <div className="flex items-center justify-between mb-2">
+          <h2 className="text-lg font-bold uppercase">
+            Hot product for this week
+          </h2>
+          <a href="#" className="text-xs text-gray-500">
+            View all →
+          </a>
         </div>
+        <p className="text-xs text-gray-500 mb-4">
+          Dont miss this opportunity at a special discount just for this week.
+        </p>
 
-        <div className="flex gap-2">
-          <Button variant="outline" size="icon">
-            <ChevronLeft className="h-4 w-4" />
-          </Button>
-          <Button variant="outline" size="icon">
-            <ChevronRight className="h-4 w-4" />
-          </Button>
-        </div>
-      </div>
-
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-        {bestSellers.map((product) => (
-          <div key={product.id} className="bg-[#C4C4C4]  p-4 rounded-lg">
-            <Image
-              src={product.image}
-              alt={product.name}
-              width={200}
-              height={200}
-              className="w-full h-auto mb-4"
-            />
-            <div className="flex gap-1 mb-2">
-              {[...Array(5)].map((_, i) => (
-                <Star
-                  key={i}
-                  className={`h-4 w-4 ${
-                    i < Math.floor(product.rating)
-                      ? "fill-yellow-400 text-yellow-400"
-                      : "text-gray-300"
-                  }`}
-                />
-              ))}
-            </div>
-            <h3 className="font-medium text-sm mb-2">{product.name}</h3>
-            <p className="font-bold text-primary">
-              ${product.price.toFixed(2)}
-            </p>
-            <Button variant="outline" className="w-full mt-2">
-              Add to Cart
-            </Button>
-          </div>
+    <div className="relative">
+      <Swiper
+        ref={swiperRef}
+        modules={[Navigation]}
+        spaceBetween={16}
+        slidesPerView="auto"
+        navigation={{
+          prevEl: ".swiper-button-prev",
+          nextEl: ".swiper-button-next",
+        }}
+        className="!overflow-visible"
+      >
+        {products.map((product) => (
+          <SwiperSlide key={product.id} className="!w-auto">
+            <ProductCard {...product} />
+          </SwiperSlide>
         ))}
-      </div>
+      </Swiper>
+
+      <button className="swiper-button-prev absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 w-4 h-4 bg-white shadow-md rounded-full flex items-center justify-center z-10">
+        <ChevronLeft className="w-2 h-2" />
+      </button>
+      <button className="swiper-button-next absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 w-4 h-4 bg-white shadow-md rounded-full flex items-center justify-center z-10">
+        <ChevronRight className="w-2 h-2" />
+      </button>
     </div>
-  );
-};
+    </div>
+  )
+}
 export default BestSellers;

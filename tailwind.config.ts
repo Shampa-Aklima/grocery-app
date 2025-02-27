@@ -1,7 +1,5 @@
-import type { Config } from 'tailwindcss'
-import animate from "tailwindcss-animate"
-
-const config: Config = {
+/** @type {import('tailwindcss').Config} */
+module.exports = {
   darkMode: ["class"],
   content: [
     "./pages/**/*.{ts,tsx}",
@@ -19,7 +17,6 @@ const config: Config = {
       },
     },
     extend: {
-
       fontFamily: {
         inter: ["var(--font-inter)", "sans-serif"],
         dosis: ["var(--font-dosis)", "sans-serif"],
@@ -58,16 +55,35 @@ const config: Config = {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
         },
+        instacart: {
+          green: "#0ca678",
+          yellow: "#f59e0b",
+          rose: "#e11d48",
+          "rose-light": "#fff1f2",
+        },
+        "star-yellow": "#fbbf24",
+        "notice-amber": "#fef3c7",
       },
       borderRadius: {
         lg: "var(--radius)",
         md: "calc(var(--radius) - 2px)",
         sm: "calc(var(--radius) - 4px)",
       },
+      keyframes: {
+        "accordion-down": {
+          from: { height: 0 },
+          to: { height: "var(--radix-accordion-content-height)" },
+        },
+        "accordion-up": {
+          from: { height: "var(--radix-accordion-content-height)" },
+          to: { height: 0 },
+        },
+      },
+      animation: {
+        "accordion-down": "accordion-down 0.2s ease-out",
+        "accordion-up": "accordion-up 0.2s ease-out",
+      },
     },
   },
-  plugins: [animate],
-}
-
-export default config
-
+  plugins: [require("tailwindcss-animate")],
+};

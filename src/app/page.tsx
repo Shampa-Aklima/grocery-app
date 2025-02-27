@@ -1,6 +1,10 @@
 import Sidebar from "@/components/Sidebar";
 import HeroSection from "@/components/HeroSection ";
 import BestSellers from "@/components/BestSellers ";
+import HotProduct from "@/components/HotProduct";
+import DiscountBanner from "@/components/DiscountBanner"
+import ProductGrid from "@/components/ProductGrid";
+import { CategoryCards } from "@/components/CategoryCards";
 
 const HomePage = () => {
   return (
@@ -8,7 +12,11 @@ const HomePage = () => {
       <Sidebar />
       <div className="w-full">
         <HeroSection />
-        <BestSellers />
+        <BestSellers/>
+        <HotProduct/>
+        <DiscountBanner/>
+        <ProductGrid />
+        <CategoryCards/>
       </div>
     </div>
   );
