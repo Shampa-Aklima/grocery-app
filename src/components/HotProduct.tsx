@@ -6,7 +6,10 @@ const HotProduct = () => {
           <h2 className="text-lg font-bold uppercase">
             Hot product for this week
           </h2>
-          <a href="#" className="text-xs text-gray-500">
+          <a
+            href="#"
+            className="text-xs flex items-center justify-center text-[#9B9BB4] bg-[#D9D9E9] h-8 w-28 rounded-xl"
+          >
             View all →
           </a>
         </div>
@@ -69,5 +72,3 @@ const HotProduct = () => {
 };
 
 export default HotProduct;
-
-

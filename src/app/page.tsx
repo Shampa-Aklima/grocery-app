@@ -4,7 +4,8 @@ import BestSellers from "@/components/BestSellers ";
 import HotProduct from "@/components/HotProduct";
 import DiscountBanner from "@/components/DiscountBanner"
 import ProductGrid from "@/components/ProductGrid";
-import { CategoryCards } from "@/components/CategoryCards";
+import CategoryCards from "@/components/CategoryCards";
+
 
 const HomePage = () => {
   return (

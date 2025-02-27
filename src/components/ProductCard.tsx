@@ -25,7 +25,7 @@ export function ProductCard({
 
   return (
     <div className="bg-white p-4 rounded-lg shadow-md h-full flex flex-col">
-      <div className="relative w-full h-40 bg-[#EDEEF5]">
+      <div className="relative h-40 bg-[#EDEEF5]">
         {discount && (
           <div className="absolute top-2 left-2 bg-instacart-green text-white text-xs font-medium px-2 py-1 rounded">
             {discount}%
@@ -34,7 +34,7 @@ export function ProductCard({
       </div>
 
       <div className="mt-2 flex flex-col flex-grow">
-        <div className="text-xs text-instacart-green font-semibold">
+        <div className="text-xs text-instacart-green font-semibold mt-2">
           IN STOCK
         </div>
         <h3 className="text-sm font-medium line-clamp-2 h-10">{title}</h3>
@@ -71,8 +71,8 @@ export function ProductCard({
         </div>
 
         <div className="flex items-center justify-center mt-2">
-          <button
-            className="w-8 h-8 flex items-center justify-center border border-gray-300 rounded-full"
+          <button 
+            className="w-8 h-8 flex items-center justify-center border-3 border-gray-300 rounded-full"
             onClick={() => setQuantity(Math.max(0, quantity - 1))}
           >
             <Minus className="w-4 h-4" />
