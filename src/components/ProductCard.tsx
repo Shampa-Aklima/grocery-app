@@ -11,7 +11,8 @@ interface ProductCardProps {
   rating: number;
   reviews: number;
   image: string;
-  store:string;
+  store?:number
+  
 }
 
 export function ProductCard({
@@ -22,6 +23,7 @@ export function ProductCard({
   rating,
   reviews,
   store
+ 
 }: ProductCardProps) {
   const [quantity, setQuantity] = useState(0);
 

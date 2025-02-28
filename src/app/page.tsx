@@ -7,6 +7,7 @@ import ProductGrid from "@/components/ProductGrid";
 import CategoryCards from "@/components/CategoryCards";
 import CustomerComment from "@/components/CustomerComment";
 import TrendingSearch from "@/components/TrendingSearch";
+import GroceryCategoriesGrid from "@/components/GroceryCategoriesGrid";
 
 const HomePage = () => {
   return (
@@ -24,6 +25,7 @@ const HomePage = () => {
         <DiscountBanner />
         <ProductGrid />
         <CategoryCards />
+        <GroceryCategoriesGrid/>
       </div>
     </div>
   );

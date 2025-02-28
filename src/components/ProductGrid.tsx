@@ -11,7 +11,7 @@ const products = [
     rating: 4,
     reviews: 1,
     image: "/placeholder.svg?height=220&width=220",
-    store: "89 in stock",
+    store: "89 IN STOCK",
   },
   {
     id: 2,
@@ -22,7 +22,7 @@ const products = [
     rating: 5,
     reviews: 1,
     image: "/placeholder.svg?height=220&width=220",
-    store: "75 in stock",
+    store: "75 IN STOCK",
   },
   {
     id: 3,
@@ -33,7 +33,7 @@ const products = [
     rating: 5,
     reviews: 1,
     image: "/placeholder.svg?height=220&width=220",
-    store: "95 in stock",
+    store: "95 IN STOCK",
   },
   {
     id: 4,
@@ -42,7 +42,7 @@ const products = [
     rating: 5,
     reviews: 1,
     image: "/placeholder.svg?height=220&width=220",
-    store: "95 in stock",
+    store: "95 IN STOCK",
   },
   {
     id: 5,
@@ -51,7 +51,7 @@ const products = [
     rating: 4,
     reviews: 1,
     image: "/placeholder.svg?height=220&width=220",
-    store: "89 in stock",
+    store: "89 IN STOCK",
   },
   {
     id: 6,
@@ -62,7 +62,7 @@ const products = [
     rating: 4,
     reviews: 1,
     image: "/placeholder.svg?height=220&width=220",
-    store: "85 in stock",
+    store: "85 IN STOCK",
   },
   {
     id: 7,
@@ -73,7 +73,7 @@ const products = [
     rating: 4,
     reviews: 1,
     image: "/placeholder.svg?height=220&width=220",
-    store: "74 in stock",
+    store: "74 IN STOCK",
   },
   {
     id: 8,
@@ -84,7 +84,7 @@ const products = [
     rating: 4,
     reviews: 1,
     image: "/placeholder.svg?height=220&width=220",
-    store: "79 in stock",
+    store: "79 IN STOCK",
   },
 ]
 
