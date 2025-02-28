@@ -5,17 +5,19 @@ const categories = [
   {
     id: 1,
     title: "Legumes & Cereals",
+    // subTitle:"Weekend Discount",
     description: "Feed your family the best",
     discount: 40,
-    image: "/placeholder.svg?height=200&width=400",
+    image: "/placeholder.svg?height=230&width=420",
     link: "/shop-now",
   },
   {
     id: 2,
     title: "Dairy & Eggs",
+    // subTitle:"Weekend Discount",
     description: "A different kind of grocery store",
     discount: 40,
-    image: "/placeholder.svg?height=200&width=400",
+    image: "/placeholder.svg?height=230&width=420",
     link: "/shop-now",
   },
 ];
@@ -26,29 +28,32 @@ const CategoryCards = () => {
       {categories.map((category) => (
         <div
           key={category.id}
-          className="relative overflow-hidden rounded-lg bg-gray-100"
+          className="relative overflow-hidden rounded-lg bg-[#C4C4C4]"
         >
           <Image
             src={category.image || ""}
             alt={category.title}
-            width={400}
-            height={200}
+            width={420}
+            height={230}
             className="w-full h-48 object-cover"
           />
-          <div className="absolute inset-0 bg-black/40 p-6 flex flex-col justify-between">
+          <div className="absolute inset-0 bg-[#C4C4C4]/40 p-6 flex flex-col justify-between">
             <div>
-              <h3 className="text-xl font-bold text-white">{category.title}</h3>
-              <p className="text-sm text-white/90 mt-1">
+              <span className=" text-sm font-dosis text-[#00B853] font-semibold">
+                WEEKEND DISCOUNT {category.discount}%
+              </span>
+              {/* <h4 className="">{category.subTitle}</h4> */}
+              <h3 className="text-xl font-bold text-[#3E445A]">
+                {category.title}
+              </h3>
+              <p className="text-sm text-[#9B9BB4] mt-1">
                 {category.description}
               </p>
             </div>
-            <div className="flex items-center justify-between">
-              <span className="text-white font-semibold">
-                WEEKEND DISCOUNT {category.discount}%
-              </span>
+            <div>
               <Link
                 href={category.link}
-                className="text-white text-sm bg-instacart-btn-category px-4 py-2 rounded-full hover:bg-opacity-90 transition-colors"
+                className="text-white text-sm bg-[#C2C2D3] px-4 py-2 rounded-full hover:bg-opacity-90 transition-colors"
               >
                 Shop Now
               </Link>

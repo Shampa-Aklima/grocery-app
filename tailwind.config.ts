@@ -58,7 +58,7 @@ module.exports = {
         instacart: {
           green: "#0ca678",
           "light-green":"#35AFA0",
-          yellow: "#f59e0b",
+          yellow: "#FFCD00",
           rose: "#e11d48",
           "rose-light": "#fff1f2",
         },
@@ -83,5 +83,6 @@ module.exports = {
       },
     },
   },
-  plugins: [require("tailwindcss-animate")],
-};
+  plugins: 
+    [require("tailwindcss-animate")],
+}

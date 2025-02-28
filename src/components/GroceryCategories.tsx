@@ -1,6 +1,6 @@
 export default function GroceryCategories() {
     return (
-      <div className="grid grid-cols-4 gap-2 ">
+      <div className="grid grid-cols-5 gap-2 ">
         <div className="col-span-2 row-span-2 bg-gray-100 p-3 flex flex-col justify-end rounded-sm">
           <div className="text-sm font-medium">Beverages</div>
           <div className="text-xs text-gray-500">11 items</div>
@@ -22,7 +22,7 @@ export default function GroceryCategories() {
           <div className="text-xs text-gray-500">6 items</div>
         </div>
   
-        {/* Bottom row - 3 cells */}
+      
         <div className="col-span-1 bg-gray-200 p-3 flex flex-col justify-end rounded-sm">
           <div className="text-sm font-medium">Fruits & Vegetables</div>
           <div className="text-xs text-gray-500">8 items</div>

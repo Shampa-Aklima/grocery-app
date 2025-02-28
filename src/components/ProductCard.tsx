@@ -5,7 +5,7 @@ import { useState } from "react";
 
 interface ProductCardProps {
   title: string;
-  price: number;
+  price?: number;
   originalPrice?: number;
   discount?: number;
   rating: number;
@@ -15,7 +15,7 @@ interface ProductCardProps {
   
 }
 
-export function ProductCard({
+const ProductCard=({
   title,
   price,
   originalPrice,
@@ -24,7 +24,7 @@ export function ProductCard({
   reviews,
   store
  
-}: ProductCardProps) {
+}: ProductCardProps) =>{
   const [quantity, setQuantity] = useState(0);
 
   return (
@@ -39,7 +39,7 @@ export function ProductCard({
 
       <div className="mt-2 flex flex-col flex-grow bg-[[#C4C4C4]]">
         <div className="text-xs text-instacart-green font-semibold mt-2">
-         {store} 
+         {store} IN STOCK
         </div>
         <h3 className="text-sm font-medium line-clamp-2 h-10">{title}</h3>
 
@@ -49,7 +49,7 @@ export function ProductCard({
               <svg
                 key={i}
                 className={`w-3 h-3 ${
-                  i < rating ? "text-star-yellow" : "text-gray-300"
+                  i < (rating ||0 )?"text-star-yellow" : "text-gray-300"
                 }`}
                 fill="currentColor"
                 viewBox="0 0 20 20"
@@ -70,7 +70,7 @@ export function ProductCard({
             </span>
           )}
           <span className="text-base font-semibold ml-2">
-            ${price.toFixed(2)}
+          ${price !== undefined ? price.toFixed(2) : "N/A"}
           </span>
         </div>
 

@@ -4,7 +4,7 @@ import { ChevronLeft, ChevronRight } from "lucide-react";
 import { useRef } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation } from "swiper/modules";
-import { ProductCard } from "./ProductCard";
+import ProductCard  from "./ProductCard";
 import "swiper/css";
 import "swiper/css/navigation";
 
@@ -18,6 +18,7 @@ const products = [
     rating: 4,
     reviews: 1,
     image: "/placeholder.svg?height=220&width=220",
+    
   },
   {
     id: 2,
@@ -28,6 +29,7 @@ const products = [
     rating: 5,
     reviews: 1,
     image: "/placeholder.svg?height=220&width=220",
+    
   },
   {
     id: 3,
@@ -38,6 +40,7 @@ const products = [
     rating: 5,
     reviews: 7,
     image: "/placeholder.svg?height=220&width=220",
+    
   },
   {
     id: 4,
@@ -46,6 +49,7 @@ const products = [
     rating: 4,
     reviews: 1,
     image: "/placeholder.svg?height=220&width=220",
+    
   },
 ];
 
