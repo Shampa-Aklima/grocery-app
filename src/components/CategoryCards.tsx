@@ -1,5 +1,5 @@
-import Image from "next/image"
-import Link from "next/link"
+import Image from "next/image";
+import Link from "next/link";
 
 const categories = [
   {
@@ -18,15 +18,18 @@ const categories = [
     image: "/placeholder.svg?height=200&width=400",
     link: "/shop-now",
   },
-]
+];
 
-const CategoryCards=()=> {
+const CategoryCards = () => {
   return (
     <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-8">
       {categories.map((category) => (
-        <div key={category.id} className="relative overflow-hidden rounded-lg bg-gray-100">
+        <div
+          key={category.id}
+          className="relative overflow-hidden rounded-lg bg-gray-100"
+        >
           <Image
-            src={category.image || "/placeholder.svg"}
+            src={category.image || ""}
             alt={category.title}
             width={400}
             height={200}
@@ -35,10 +38,14 @@ const CategoryCards=()=> {
           <div className="absolute inset-0 bg-black/40 p-6 flex flex-col justify-between">
             <div>
               <h3 className="text-xl font-bold text-white">{category.title}</h3>
-              <p className="text-sm text-white/90 mt-1">{category.description}</p>
+              <p className="text-sm text-white/90 mt-1">
+                {category.description}
+              </p>
             </div>
             <div className="flex items-center justify-between">
-              <span className="text-white font-semibold">WEEKEND DISCOUNT {category.discount}%</span>
+              <span className="text-white font-semibold">
+                WEEKEND DISCOUNT {category.discount}%
+              </span>
               <Link
                 href={category.link}
                 className="text-white text-sm bg-instacart-green px-4 py-2 rounded-full hover:bg-opacity-90 transition-colors"
@@ -50,7 +57,7 @@ const CategoryCards=()=> {
         </div>
       ))}
     </div>
-  )
-}
+  );
+};
 
-export default CategoryCards
+export default CategoryCards;

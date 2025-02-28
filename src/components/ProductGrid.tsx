@@ -1,4 +1,4 @@
-"use client"
+
 import ProductCard from "./ProductCard"
 
 const products = [

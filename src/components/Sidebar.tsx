@@ -16,7 +16,6 @@ const categories = [
 const Sidebar = () => {
   return (
     <div className=" mx-auto flex-col py-2">
-      {/* Left Sidebar (270px) */}
       <div className="w-[270px] h-[513px] space-y-6">
         <div className="space-y-2 border-2 p-4">
           {categories.map((category) => (

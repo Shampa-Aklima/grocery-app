@@ -1,12 +1,12 @@
-"use client"
+"use client";
 
-import { ChevronLeft, ChevronRight } from "lucide-react"
-import { useRef } from "react"
-import { Swiper, SwiperSlide } from "swiper/react"
-import { Navigation } from "swiper/modules"
-import { ProductCard } from "./ProductCard"
-import "swiper/css"
-import "swiper/css/navigation"
+import { ChevronLeft, ChevronRight } from "lucide-react";
+import { useRef } from "react";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Navigation } from "swiper/modules";
+import { ProductCard } from "./ProductCard";
+import "swiper/css";
+import "swiper/css/navigation";
 
 const products = [
   {
@@ -47,20 +47,27 @@ const products = [
     reviews: 1,
     image: "/placeholder.svg?height=220&width=220",
   },
-]
+];
 
 const BestSellers = () => {
-  const swiperRef = useRef(null)
+  const swiperRef = useRef(null);
 
   return (
     <div className="mb-10">
       <div className="flex items-center justify-between mb-2">
-        <h2 className="text-lg font-bold uppercase">Hot product for this week</h2>
-        <a href="#" className="text-xs flex items-center justify-center text-[#9B9BB4] bg-[#D9D9E9] h-8 w-28 rounded-xl">
+        <h2 className="text-lg font-bold uppercase">
+          Hot product for this week
+        </h2>
+        <a
+          href="#"
+          className="text-xs flex items-center justify-center text-[#9B9BB4] bg-[#D9D9E9] h-8 w-28 rounded-xl"
+        >
           View all →
         </a>
       </div>
-      <p className="text-xs text-gray-500 mb-4">Dont miss this opportunity at a special discount just for this week.</p>
+      <p className="text-xs text-gray-500 mb-4">
+        Dont miss this opportunity at a special discount just for this week.
+      </p>
 
       <div className="relative mx-auto" style={{ width: "870px" }}>
         <Swiper
@@ -91,8 +98,7 @@ const BestSellers = () => {
         </button>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default BestSellers
-
+export default BestSellers;

@@ -23,7 +23,7 @@ const HotProduct = () => {
               <div className="absolute -left-2 -top-2 w-12 h-12 bg-instacart-rose rounded-full flex items-center justify-center text-white font-bold">
                 18%
               </div>
-              <div className="bg-gray-300 aspect-square w-full max-w-[120px]"></div>
+              <div className="bg-[#C4C4C4] aspect-square w-full max-w-[120px]"></div>
             </div>
 
             <div className="flex-1">

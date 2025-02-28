@@ -33,7 +33,7 @@ export function ProductCard({
         )}
       </div>
 
-      <div className="mt-2 flex flex-col flex-grow">
+      <div className="mt-2 flex flex-col flex-grow bg-[[#C4C4C4]]">
         <div className="text-xs text-instacart-green font-semibold mt-2">
           IN STOCK
         </div>
@@ -70,7 +70,7 @@ export function ProductCard({
           </span>
         </div>
 
-        <div className="flex items-center justify-center mt-2">
+        <div className="flex items-center justify-center mt-2 w-34 h-12 border-2 border-[#EDEEF5] bg-transparent rounded-full">
           <button 
             className="w-8 h-8 flex items-center justify-center border-3 border-gray-300 rounded-full"
             onClick={() => setQuantity(Math.max(0, quantity - 1))}
