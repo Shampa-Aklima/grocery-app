@@ -48,7 +48,7 @@ const CategoryCards = () => {
               </span>
               <Link
                 href={category.link}
-                className="text-white text-sm bg-instacart-green px-4 py-2 rounded-full hover:bg-opacity-90 transition-colors"
+                className="text-white text-sm bg-instacart-btn-category px-4 py-2 rounded-full hover:bg-opacity-90 transition-colors"
               >
                 Shop Now
               </Link>

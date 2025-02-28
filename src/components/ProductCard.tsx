@@ -11,6 +11,7 @@ interface ProductCardProps {
   rating: number;
   reviews: number;
   image: string;
+  store:string;
 }
 
 export function ProductCard({
@@ -20,6 +21,7 @@ export function ProductCard({
   discount,
   rating,
   reviews,
+  store
 }: ProductCardProps) {
   const [quantity, setQuantity] = useState(0);
 
@@ -27,7 +29,7 @@ export function ProductCard({
     <div className="bg-white p-4 rounded-lg shadow-md h-full flex flex-col">
       <div className="relative h-40 bg-[#EDEEF5]">
         {discount && (
-          <div className="absolute top-2 left-2 bg-instacart-green text-white text-xs font-medium px-2 py-1 rounded">
+          <div className="absolute top-2 left-2 bg-instacart-light-green text-white text-xs font-medium px-2 py-1 rounded">
             {discount}%
           </div>
         )}
@@ -35,7 +37,7 @@ export function ProductCard({
 
       <div className="mt-2 flex flex-col flex-grow bg-[[#C4C4C4]]">
         <div className="text-xs text-instacart-green font-semibold mt-2">
-          IN STOCK
+         {store} 
         </div>
         <h3 className="text-sm font-medium line-clamp-2 h-10">{title}</h3>
 

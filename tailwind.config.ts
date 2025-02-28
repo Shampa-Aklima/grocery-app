@@ -57,18 +57,16 @@ module.exports = {
         },
         instacart: {
           green: "#0ca678",
+          "light-green":"#35AFA0",
           yellow: "#f59e0b",
           rose: "#e11d48",
           "rose-light": "#fff1f2",
         },
         "star-yellow": "#fbbf24",
         "notice-amber": "#fef3c7",
+        "btn-cat":"#C2C2D3"
       },
-      borderRadius: {
-        lg: "var(--radius)",
-        md: "calc(var(--radius) - 2px)",
-        sm: "calc(var(--radius) - 4px)",
-      },
+      
       keyframes: {
         "accordion-down": {
           from: { height: 0 },
