@@ -43,10 +43,10 @@ const Sidebar = () => {
             </div>
             
           ))}
-          <div className="border-t-2 font-medium text-[#3E445A] px-6 py-3 ">
+          <div className="border-t-2 font-medium text-[#3E445A] px-6 py-6 ">
             {categories.slice(8).map((category, index) => (
               <div key={index} >
-                <Link href="#" >
+                <Link href="#">
                   {category.name}
                 </Link>
               </div>
