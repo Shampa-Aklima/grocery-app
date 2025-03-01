@@ -11,6 +11,8 @@ import TrendingSearch from "@/components/TrendingSearch";
 import GroceryCategoriesGrid from "@/components/GroceryCategoriesGrid";
 import Newsletter from "@/components/Newsletter";
 import DownloadApp from "@/components/DownloadApp";
+import Footer from "@/components/Footer";
+import FeatureSection from "@/components/FeatureSection";
 
 const HomePage = () => {
   return (
@@ -33,6 +35,8 @@ const HomePage = () => {
         </div>
       </div>
       <Newsletter />
+      <FeatureSection />
+      <Footer />
     </div>
   );
 };
