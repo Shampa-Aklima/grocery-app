@@ -20,11 +20,11 @@ const Newsletter=()=> {
           <div className="md:w-1/2 mt-8 md:mt-0">
           
             <Image
-              src="/public/coupon.png"
+              src="/coupon.png"
               alt=""
               width={420}
               height={240}
-              className="rounded-lg shadow-lg"
+              className="flex items-end "
             />
               
              

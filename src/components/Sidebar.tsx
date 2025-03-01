@@ -1,41 +1,57 @@
 import Link from "next/link";
 import { Button } from "./ui/button";
+import {
+  Coffee,
+  Cookie,
+  Sandwich,
+  Egg,
+  Apple,
+  Snowflake,
+  ShoppingCart,
+  Drumstick,
+} from "lucide-react";
+
 const categories = [
-  "Beverages",
-  "Biscuits & Snacks",
-  "Bread & Bakery",
-  "Breakfast & Dairy",
-  "Fruits & Vegetables",
-  "Frozen Foods",
-  "Grocery & Staples",
-  "Meat & Seafood",
+  { name: "Beverages", icon: Coffee },
+  { name: "Biscuits & Snacks", icon: Cookie },
+  { name: "Bread & Bakery", icon: Sandwich },
+  { name: "Breakfast & Dairy", icon: Egg },
+  { name: "Fruits & Vegetables", icon: Apple },
+  { name: "Frozen Foods", icon: Snowflake },
+  { name: "Grocery & Staples", icon: ShoppingCart },
+  { name: "Meat & Seafood", icon: Drumstick },
+  { name: "Value of the Day", icon: "" },
+  { name: "Top 100 Offers", icon: "" },
+  { name: "New Arrivals", icon: "" },
 ];
 
 const Sidebar = () => {
   return (
-    <div className=" mx-auto flex-col py-2 border-2 border-[#e5e5e5]">
-      <div className="w-[270px] h-[513px] space-y-6">
-        <div className="space-y-2 border-b-2 p-4">
-          {categories.map((category) => (
-            <Link
-              key={category}
-              href="#"
-              className="flex items-center gap-2 text-sm hover:text-primary"
-            >
-              {category}
-            </Link>
+    <div className=" w-[270px] space-y-6 mx-auto flex-col py-2 ">
+      <div className="w-[270px] border-2 border-[#e5e5e5] space-y-3">
+        <div className="grid grid-cols-1">
+          {categories.slice(0, 8).map((category, index) => (
+            
+            <div key={index} className="flex justify-start items-center space-x-3 p-4 ">
+              
+              <Link href="#"/>  
+              <category.icon className="w-6 h-6 text-gray-600" />
+                <span className="font-medium text-[#3E445A]">
+                  {category.name}
+                </span>
+              
+            </div>
+            
           ))}
-        </div>
-        <div className="flex flex-col gap-3 mx-auto">
-          <Link href="#" className="font-inter text-sm text-[#3E445A]">
-            Value of the Day
-          </Link>
-          <Link href="#" className="font-inter text-sm text-[#3E445A]">
-            Top 100 Offers
-          </Link>
-          <Link href="#" className="font-inter text-sm text-[#3E445A]">
-            New Arrivals
-          </Link>
+          <div className="border-t-2 font-medium text-[#3E445A] px-6 py-3 ">
+            {categories.slice(8).map((category, index) => (
+              <div key={index} >
+                <Link href="#" >
+                  {category.name}
+                </Link>
+              </div>
+            ))}
+          </div>
         </div>
       </div>
 
@@ -67,7 +83,9 @@ const Sidebar = () => {
             every hour.
           </span>
           <p className="font-thin mb-2 text-sm">only-from</p>
-          <span className="text-3xl font-bold font-dosis text-[#D51243]">$14.99</span>
+          <span className="text-3xl font-bold font-dosis text-[#D51243]">
+            $14.99
+          </span>
           <Button className="variant=ghost w-22 h-10 mt-3 bg-[#35AFA0] border-1 rounded-full">
             Shop Now
           </Button>
