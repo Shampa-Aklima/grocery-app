@@ -12,7 +12,7 @@ import GroceryCategoriesGrid from "@/components/GroceryCategoriesGrid";
 import Newsletter from "@/components/Newsletter";
 import DownloadApp from "@/components/DownloadApp";
 import FeatureSection from "@/components/FeatureSection";
-import Banner from "@/components/ui/Banner";
+import Banner from "@/components/Banner";
 
 const HomePage = () => {
   return (
