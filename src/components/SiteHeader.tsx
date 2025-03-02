@@ -13,6 +13,9 @@ import {
   ShoppingCart,
   Home,
   Menu,
+  Coffee,
+  Cookie,
+  Drumstick,
 } from "lucide-react";
 import {
   DropdownMenu,
@@ -26,15 +29,14 @@ const SiteHeader = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   return (
-    <div className="w-full mx-auto">
+    <div>
       <header className="w-full mx-auto">
         <div className="w-full bg-teal-500 text-white text-sm py-1 px-4 text-center">
           Due to current circumstances, there may be slight delays in order
           processing
         </div>
 
-        <div className="text-primary-foreground p-3 ">
-          {/* Main Container for Header */}
+        <div className="text-primary-foreground p-3">
           <div className=" mx-auto max-w-[1200px] px-4 py-2">
             <div className="flex flex-col sm:flex-row items-center justify-between gap-4 sm:gap-0 ">
               {/* Top Links */}
@@ -43,7 +45,7 @@ const SiteHeader = () => {
                 <Link href="/compare">Compare</Link>
                 <Link href="/wishlist">Wishlist</Link>
               </div>
-              {/* Info and Select */}
+             
               <div className="flex flex-wrap items-center justify-center sm:justify-end gap-4 text-sm text-[#3E445A]">
                 <span className="hidden md:inline">
                   100% Secure delivery without contacting the courier
@@ -107,7 +109,7 @@ const SiteHeader = () => {
 
         <nav className="border-b-2 border-[#E3E4E6]">
           <div className="container mx-auto max-w-[1200px] px-4">
-            <div className="flex items-center justify-between gap-10 py-4">
+            <div className="flex items-center justify-between gap-10 py-4 ">
               <Button
                 variant="default"
                 className="lg:hidden"
@@ -125,7 +127,7 @@ const SiteHeader = () => {
               <div
                 className={`${
                   isMenuOpen ? "flex" : "hidden"
-                } lg:flex flex-col lg:flex-row absolute lg:relative left-0 top-full lg:top-auto bg-white lg:bg-transparent w-full lg:w-auto z-50 lg:items-center gap-4 lg:gap-6 py-4 lg:py-0 px-4 lg:px-0 shadow-md lg:shadow-none`}
+                } lg:flex flex-col lg:flex-row absolute lg:relative left-0 top-full lg:top-auto bg-white lg:bg-transparent z-50 lg:items-center gap-4 lg:gap-6 py-4 lg:py-0 px-4 lg:px-0 shadow-md lg:shadow-none`}
               >
                 <DropdownMenu>
                   <DropdownMenuTrigger asChild>
@@ -172,12 +174,15 @@ const SiteHeader = () => {
                   SHOP
                 </Link>
                 <Link href="/meats" className="font-medium">
-                  MEATS & SEAFOOD
+                  <Drumstick className="w-5 h-5" />
+              MEATS & SEAFOOD
                 </Link>
                 <Link href="/bakery" className="font-medium">
+                  <Cookie className="w-5 h-5 inline-block " />
                   BAKERY
                 </Link>
                 <Link href="/beverages" className="font-medium">
+                  <Coffee className="w-5 h-5 " />
                   BEVERAGES
                 </Link>
                 <Link href="/blog" className="font-medium">
