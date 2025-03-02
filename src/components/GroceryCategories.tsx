@@ -1,53 +1,33 @@
-export default function GroceryCategories() {
-    return (
-      <div className="grid grid-cols-5 gap-2 ">
-        <div className="col-span-2 row-span-2 bg-gray-100 p-3 flex flex-col justify-end rounded-sm">
-          <div className="text-sm font-medium">Beverages</div>
-          <div className="text-xs text-gray-500">11 items</div>
+interface Category {
+  name: string;
+  count: number;
+  span: string;
+}
+
+interface GroceryCategoriesProps {
+  categories: Category[];
+}
+
+const GroceryCategories: React.FC<GroceryCategoriesProps> = ({
+  categories,
+}) => {
+  return (
+    <div className="grid grid-cols-5 gap-4">
+      {categories.map((category, index) => (
+        <div
+          key={index}
+          className={`${category.span} bg-transparent p-4 flex gap-5 `}>
+          <div className="w-16 h-16 bg-gray-200 rounded-sm overflow-hidden flex-shrink-0"></div>
+          <div>
+            <h3 className="text-xl font-semibold">{category.name}</h3>
+            <span className="text-sm text-gray-500">
+              {category.count} items
+            </span>
+          </div>
         </div>
-  
-        
-        <div className="col-span-1 bg-gray-200 p-3 flex flex-col justify-end rounded-sm">
-          <div className="text-sm font-medium">Snacks & Bakery</div>
-          <div className="text-xs text-gray-500">6 items</div>
-        </div>
-  
-        <div className="col-span-1 bg-gray-200 p-3 flex flex-col justify-end rounded-sm">
-          <div className="text-sm font-medium">Breads & Bakery</div>
-          <div className="text-xs text-gray-500">6 items</div>
-        </div>
-  
-        <div className="col-span-1 bg-gray-200 p-3 flex flex-col justify-end rounded-sm">
-          <div className="text-sm font-medium">Frozen Foods</div>
-          <div className="text-xs text-gray-500">6 items</div>
-        </div>
-  
-      
-        <div className="col-span-1 bg-gray-200 p-3 flex flex-col justify-end rounded-sm">
-          <div className="text-sm font-medium">Fruits & Vegetables</div>
-          <div className="text-xs text-gray-500">8 items</div>
-        </div>
-  
-        <div className="col-span-1 bg-gray-200 p-3 flex flex-col justify-end rounded-sm">
-          <div className="text-sm font-medium">Grocery & Staples</div>
-          <div className="text-xs text-gray-500">12 items</div>
-        </div>
-  
-        <div className="col-span-1 bg-gray-200 p-3 flex flex-col justify-end rounded-sm">
-          <div className="text-sm font-medium">Household Needs</div>
-          <div className="text-xs text-gray-500">9 items</div>
-        </div>
-  
-        <div className="col-span-1 bg-gray-200 p-3 flex flex-col justify-end rounded-sm">
-          <div className="text-sm font-medium">Meat & Seafood</div>
-          <div className="text-xs text-gray-500">8 items</div>
-        </div>
-        <div className="col-span-1 bg-gray-200 p-3 flex flex-col justify-end rounded-sm">
-          <div className="text-sm font-medium">Meat & Seafood</div>
-          <div className="text-xs text-gray-500">8 items</div>
-        </div>
-      </div>
-    )
-  }
-  
-  
+      ))}
+    </div>
+  );
+};
+
+export default GroceryCategories;

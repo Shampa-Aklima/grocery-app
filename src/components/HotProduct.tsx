@@ -1,7 +1,7 @@
 const HotProduct = () => {
   return (
     <div>
-      <div className="mb-10">
+      <div className="mb-10 mt-10">
         <div className="flex items-center justify-between mb-2">
           <h2 className="text-lg font-bold uppercase">
             Hot product for this week

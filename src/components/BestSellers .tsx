@@ -1,16 +1,14 @@
 "use client";
 
-
-
-import { ChevronLeft, ChevronRight } from "lucide-react"
-import { useRef, useState } from "react"
-import { Swiper, SwiperSlide } from "swiper/react"
-import { Navigation } from "swiper/modules"
-import ProductCard from "./ProductCard"
-import "swiper/css"
-import "swiper/css/navigation"
-import "swiper/swiper-bundle.css"
-import type { Swiper as SwiperType } from "swiper"
+import { ChevronLeft, ChevronRight } from "lucide-react";
+import { useRef, useState } from "react";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Navigation } from "swiper/modules";
+import ProductCard from "./ProductCard";
+import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/swiper-bundle.css";
+import type { Swiper as SwiperType } from "swiper";
 
 const products = [
   {
@@ -51,17 +49,19 @@ const products = [
     reviews: 1,
     image: "/placeholder.svg?height=220&width=220",
   },
-]
+];
 
 const BestSellers = () => {
-  const [swiper, setSwiper] = useState<SwiperType | null>(null)
-  const prevRef = useRef<HTMLButtonElement>(null)
-  const nextRef = useRef<HTMLButtonElement>(null)
+  const [swiper, setSwiper] = useState<SwiperType | null>(null);
+  const prevRef = useRef<HTMLButtonElement>(null);
+  const nextRef = useRef<HTMLButtonElement>(null);
 
   return (
     <div className="mb-10">
       <div className="flex items-center justify-between mb-2">
-        <h2 className="text-lg font-bold uppercase">Hot product for this week</h2>
+        <h2 className="text-lg font-bold uppercase">
+          Hot product for this week
+        </h2>
         <a
           href="#"
           className="text-xs flex items-center justify-center text-[#9B9BB4] bg-[#D9D9E9] h-8 w-28 rounded-xl"
@@ -90,7 +90,6 @@ const BestSellers = () => {
           ))}
         </Swiper>
 
-        {/* Custom Navigation */}
         <button
           ref={prevRef}
           onClick={() => swiper?.slidePrev()}
@@ -109,8 +108,7 @@ const BestSellers = () => {
         </button>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default BestSellers
-
+export default BestSellers;

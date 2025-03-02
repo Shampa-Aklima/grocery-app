@@ -2,7 +2,7 @@ import Image from "next/image";
 
 const Newsletter=()=> {
     return (
-      <div className="flex items-center bg-instacart-light-green text-white min-w[1200px] mt-10">
+      <div className="flex items-center bg-instacart-light-green text-white max-h-screen mt-10">
         <div className="container mx-auto p-12 md:py-12 flex flex-col md:flex-row">
           <div className="md:w-1/2 space-y-4 flex flex-col justify-center items-start">
             <p className="text-sm font-extralight">$20 discount for your first order</p>

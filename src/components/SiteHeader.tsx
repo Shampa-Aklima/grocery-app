@@ -3,11 +3,23 @@
 import Link from "next/link";
 import Image from "next/image";
 import { Jersey_25 } from "next/font/google";
-import { Search, ShoppingCart, User, Menu } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { useState } from "react";
-
+import {
+  ChevronDown,
+  User,
+  Search,
+  ShoppingCart,
+  Home,
+  Menu,
+} from "lucide-react";
+import {
+  DropdownMenu,
+  DropdownMenuTrigger,
+  DropdownMenuContent,
+  DropdownMenuItem,
+} from "@/components/ui/dropdown-menu";
 const jersey = Jersey_25({ weight: "400", subsets: ["latin"] });
 
 const SiteHeader = () => {
@@ -21,18 +33,18 @@ const SiteHeader = () => {
           processing
         </div>
 
-        <div className="bg-primary text-primary-foreground">
+        <div className="text-primary-foreground p-3 ">
           {/* Main Container for Header */}
-          <div className="container mx-auto max-w-[1200px] px-4 py-2">
-            <div className="flex flex-col sm:flex-row items-center justify-between gap-4 sm:gap-0">
+          <div className=" mx-auto max-w-[1200px] px-4 py-2">
+            <div className="flex flex-col sm:flex-row items-center justify-between gap-4 sm:gap-0 ">
               {/* Top Links */}
-              <div className="flex gap-4 text-sm mb-2 sm:mb-0">
+              <div className=" text-[#3E445A] flex gap-4 text-sm mb-2  sm:mb-0">
                 <Link href="/about">About Us</Link>
                 <Link href="/compare">Compare</Link>
                 <Link href="/wishlist">Wishlist</Link>
               </div>
               {/* Info and Select */}
-              <div className="flex flex-wrap items-center justify-center sm:justify-end gap-4 text-sm">
+              <div className="flex flex-wrap items-center justify-center sm:justify-end gap-4 text-sm text-[#3E445A]">
                 <span className="hidden md:inline">
                   100% Secure delivery without contacting the courier
                 </span>
@@ -48,9 +60,7 @@ const SiteHeader = () => {
           </div>
         </div>
 
-        {/* Main Header Container */}
-        <div className="container mx-auto max-w-[1200px] py-4 px-4 flex flex-wrap items-center justify-between">
-          {/* Logo and Branding */}
+        <div className="container mx-auto max-w-[1200px] py-4 px-4 flex flex-wrap items-center justify-between ">
           <div className="flex items-center">
             <Image
               src="/logo.png"
@@ -68,7 +78,6 @@ const SiteHeader = () => {
             </Link>
           </div>
 
-          {/* Search Input */}
           <div className="flex-1 max-w-xl mx-4 my-4 lg:my-0 order-3 lg:order-2 w-full lg:w-auto">
             <div className="relative">
               <Input
@@ -80,7 +89,6 @@ const SiteHeader = () => {
             </div>
           </div>
 
-          {/* User and Cart Icons */}
           <div className="flex items-center gap-4 order-2 lg:order-3">
             <Button variant="ghost" size="icon" className="hidden sm:flex">
               <User className="h-5 w-5" />
@@ -97,8 +105,7 @@ const SiteHeader = () => {
           </div>
         </div>
 
-        {/* Navigation */}
-        <nav className="border-t">
+        <nav className="border-b-2 border-[#E3E4E6]">
           <div className="container mx-auto max-w-[1200px] px-4">
             <div className="flex items-center justify-between gap-10 py-4">
               <Button
@@ -109,7 +116,10 @@ const SiteHeader = () => {
                 <Menu className="h-5 w-5 mr-2" />
                 ALL CATEGORIES
               </Button>
-              <Button variant="default" className="hidden lg:flex  bg-[#35AFA0] border-1">
+              <Button
+                variant="default"
+                className="hidden lg:flex bg-[#35AFA0] border-1"
+              >
                 ALL CATEGORIES
               </Button>
               <div
@@ -117,9 +127,47 @@ const SiteHeader = () => {
                   isMenuOpen ? "flex" : "hidden"
                 } lg:flex flex-col lg:flex-row absolute lg:relative left-0 top-full lg:top-auto bg-white lg:bg-transparent w-full lg:w-auto z-50 lg:items-center gap-4 lg:gap-6 py-4 lg:py-0 px-4 lg:px-0 shadow-md lg:shadow-none`}
               >
-                <Link href="/" className="font-medium">
-                  HOME
-                </Link>
+                <DropdownMenu>
+                  <DropdownMenuTrigger asChild>
+                    <Button variant="link" className="font-medium p-0 h-auto">
+                      HOME
+                      <ChevronDown className="h-4 w-4 ml-1" />
+                    </Button>
+                  </DropdownMenuTrigger>
+                  <DropdownMenuContent className="w-56">
+                    <DropdownMenuItem className="cursor-pointer">
+                      <Link href="/home2" className="flex items-center w-full">
+                        <Home className="h-4 w-4 mr-2" />
+                        <span>Home 2</span>
+                      </Link>
+                    </DropdownMenuItem>
+                    <DropdownMenuItem className="cursor-pointer">
+                      <Link href="/home3" className="flex items-center w-full">
+                        <Home className="h-4 w-4 mr-2" />
+                        <span>Home 3</span>
+                      </Link>
+                    </DropdownMenuItem>
+                    <DropdownMenuItem className="cursor-pointer">
+                      <Link href="/home3" className="flex items-center w-full">
+                        <Home className="h-4 w-4 mr-2" />
+                        <span>Home 4</span>
+                      </Link>
+                    </DropdownMenuItem>
+                    <DropdownMenuItem className="cursor-pointer">
+                      <Link href="/home3" className="flex items-center w-full">
+                        <Home className="h-4 w-4 mr-2" />
+                        <span>Home 5</span>
+                      </Link>
+                    </DropdownMenuItem>
+                    <DropdownMenuItem className="cursor-pointer">
+                      <Link href="/home4" className="flex items-center w-full">
+                        <Home className="h-4 w-4 mr-2" />
+                        <span>Home 4</span>
+                      </Link>
+                    </DropdownMenuItem>
+                  </DropdownMenuContent>
+                </DropdownMenu>
+
                 <Link href="/shop" className="font-medium">
                   SHOP
                 </Link>
