@@ -62,9 +62,9 @@ const ProductSpecialOfferGrid = () => {
   return (
     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6 border-2 border-[#ED174A] rounded-lg p-5">
       {items.length > 0 ? (
-        items.map((item) => <ProductSpecialOffer key={item.id} item={item} />) // Pass item as prop
+        items.map((item) => <ProductSpecialOffer key={item.id} item={item} />) 
       ) : (
-        <p>No items available.</p> // ✅ Fallback to avoid errors when `items` is empty
+        <p>No items available.</p> 
       )}
     </div>
   );

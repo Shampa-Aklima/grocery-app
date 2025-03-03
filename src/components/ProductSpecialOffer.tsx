@@ -1,6 +1,6 @@
 import { Star } from "lucide-react";
 
-// Define the type for the `item` prop that includes all the properties you want to destructure
+
 interface Item {
   id: number;
   name: string;
