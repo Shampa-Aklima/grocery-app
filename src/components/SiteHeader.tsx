@@ -45,7 +45,7 @@ const SiteHeader = () => {
                 <Link href="/compare">Compare</Link>
                 <Link href="/wishlist">Wishlist</Link>
               </div>
-             
+
               <div className="flex flex-wrap items-center justify-center sm:justify-end gap-4 text-sm text-[#3E445A]">
                 <span className="hidden md:inline">
                   100% Secure delivery without contacting the courier
@@ -107,7 +107,7 @@ const SiteHeader = () => {
           </div>
         </div>
 
-        <nav className="border-b-2 border-[#E3E4E6]">
+        <nav className="border-b-2 border-[#E3E4E6] text-sm">
           <div className="container mx-auto max-w-[1200px] px-4">
             <div className="flex items-center justify-between gap-10 py-4 ">
               <Button
@@ -127,11 +127,11 @@ const SiteHeader = () => {
               <div
                 className={`${
                   isMenuOpen ? "flex" : "hidden"
-                } lg:flex flex-col lg:flex-row absolute lg:relative left-0 top-full lg:top-auto bg-white lg:bg-transparent z-50 lg:items-center gap-4 lg:gap-6 py-4 lg:py-0 px-4 lg:px-0 shadow-md lg:shadow-none`}
+                } lg:flex flex-col justify-start lg:flex-row absolute lg:relative left-0 top-full lg:top-auto bg-white lg:bg-transparent z-50 lg:items-center gap-4 lg:gap-6 py-4 lg:py-0 px-4 lg:px-0 shadow-md lg:shadow-none`}
               >
                 <DropdownMenu>
                   <DropdownMenuTrigger asChild>
-                    <Button variant="link" className="font-medium p-0 h-auto">
+                    <Button variant="link" className="font-medium p-0 h-auto border-none outline-none">
                       HOME
                       <ChevronDown className="h-4 w-4 ml-1" />
                     </Button>
@@ -173,18 +173,32 @@ const SiteHeader = () => {
                 <Link href="/shop" className="font-medium">
                   SHOP
                 </Link>
-                <Link href="/meats" className="font-medium">
-                  <Drumstick className="w-5 h-5" />
-              MEATS & SEAFOOD
-                </Link>
-                <Link href="/bakery" className="font-medium">
-                  <Cookie className="w-5 h-5 inline-block " />
-                  BAKERY
-                </Link>
-                <Link href="/beverages" className="font-medium">
-                  <Coffee className="w-5 h-5 " />
-                  BEVERAGES
-                </Link>
+
+                <div className="flex justify-center items-center">
+                  <Link
+                    href="/meats"
+                    className="font-medium flex items-center space-x-2"
+                  >
+                    {/* <Drumstick className="w-4 h-4" /> */}
+                    MEATS & SEAFOOD
+                  </Link>
+                </div>
+
+                <div className="font-medium flex items-center space-x-2">
+                  <Link href="/bakery"
+                   className="font-medium">
+                    {/* <Cookie className="w-4 h-4  " /> */}
+                    BAKERY
+                  </Link>
+                </div>
+
+                <div className="font-medium flex items-center space-x-2">
+                  <Link href="/beverages" className="font-medium">
+                    {/* <Coffee className="w-4 h-4 " /> */}
+                    BEVERAGES
+                  </Link>
+                </div>
+
                 <Link href="/blog" className="font-medium">
                   BLOG
                 </Link>
