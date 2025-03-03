@@ -1,3 +1,4 @@
+
 "use client";
 import Sidebar from "@/components/Sidebar";
 import BestSellers from "@/components/BestSellers ";
@@ -14,30 +15,34 @@ import FeatureSection from "@/components/FeatureSection";
 import Banner from "@/components/Banner";
 import HeroSlider from "@/components/HeroSlider";
 
+
 const HomePage = () => {
-  return (
-    <div className="w-full max-w-[1200px] mx-auto space-x-6 mt-16">
-      <div className="flex">
-        <div className="w-full">
-          <Sidebar />
-          <DownloadApp />
-          <TrendingSearch />
-          <CustomerComment />
+    return (
+      
+      <div className="w-full max-w-[1200px] mx-auto space-x-6 mt-16">
+    
+        <div className="flex">
+          <div className="w-full">
+            <Sidebar />
+            <DownloadApp />
+            <TrendingSearch />
+            <CustomerComment />
+          </div>
+          <div className="w-full">
+            <HeroSlider/>
+            <BestSellers />
+            <Banner/>
+            <HotProduct />
+            <DiscountBanner />
+            <ProductGrid />
+            <CategoryCards />
+          </div>
         </div>
-        <div className="w-full">
-          <HeroSlider/>
-          <BestSellers />
-          <Banner/>
-          <HotProduct />
-          <DiscountBanner />
-          <ProductGrid />
-          <CategoryCards />
-        </div>
+        <GroceryCategoriesGrid />
+        <Newsletter />
+        <FeatureSection />    
       </div>
-      <GroceryCategoriesGrid />
-      <Newsletter />
-      <FeatureSection />    
-    </div>
-  );
-};
-export default HomePage;
+    );
+  };
+  export default HomePage;
+  

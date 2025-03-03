@@ -20,6 +20,7 @@ module.exports = {
       fontFamily: {
         inter: ["var(--font-inter)", "sans-serif"],
         dosis: ["var(--font-dosis)", "sans-serif"],
+        jersey: ['var(--font-jersey)', 'sans-serif'],
       },
       colors: {
         border: "hsl(var(--border))",

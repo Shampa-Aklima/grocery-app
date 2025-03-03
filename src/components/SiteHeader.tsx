@@ -1,8 +1,7 @@
 "use client";
-
 import Link from "next/link";
 import Image from "next/image";
-import { Jersey_25 } from "next/font/google";
+
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { useState } from "react";
@@ -13,9 +12,6 @@ import {
   ShoppingCart,
   Home,
   Menu,
-  Coffee,
-  Cookie,
-  Drumstick,
 } from "lucide-react";
 import {
   DropdownMenu,
@@ -23,7 +19,8 @@ import {
   DropdownMenuContent,
   DropdownMenuItem,
 } from "@/components/ui/dropdown-menu";
-const jersey = Jersey_25({ weight: "400", subsets: ["latin"] });
+
+
 
 const SiteHeader = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -73,7 +70,7 @@ const SiteHeader = () => {
             />
             <Link href="/" className="flex items-center">
               <span
-                className={`text-3xl font-bold ${jersey.className} text-[hsl(var(--jersey-color))]`}
+                className="text-3xl font-bold font-jersey text-[#35AFA0]"
               >
                 Basket
               </span>
@@ -138,7 +135,7 @@ const SiteHeader = () => {
                   </DropdownMenuTrigger>
                   <DropdownMenuContent className="w-56">
                     <DropdownMenuItem className="cursor-pointer">
-                      <Link href="/home2" className="flex items-center w-full">
+                      <Link href="/home/page2" className="flex items-center w-full">
                         <Home className="h-4 w-4 mr-2" />
                         <span>Home 2</span>
                       </Link>
