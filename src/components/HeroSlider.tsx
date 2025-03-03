@@ -90,7 +90,7 @@ const HeroSlider = () => {
                 </span>
               </div>
 
-              <button className="bg-instacart-light-green hover:bg-green-600 transition-colors text-white text-sm px-4 py-2 rounded-full flex items-center">
+              <button className="bg-instacart-light-green hover:bg-instacart-light-green transition-colors text-white text-sm px-4 py-2 rounded-full flex items-center">
                 {slide.buttonText}
                 <ChevronRight className="w-4 h-4 ml-1" />
               </button>
