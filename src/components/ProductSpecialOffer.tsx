@@ -14,7 +14,7 @@ interface Item {
 }
 
 interface ItemCardProps {
-  item: Item; // Accepts an object of type Item
+  item: Item; // 
 }
 
 const ProductSpecialOffer = ({ item }: ItemCardProps) => {
