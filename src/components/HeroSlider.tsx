@@ -1,8 +1,6 @@
 "use client";
-
 import { useState } from "react";
 import { ChevronRight } from "lucide-react";
-
 interface SlideProps {
   id: number;
   title: string;
@@ -49,7 +47,6 @@ const HeroSlider = () => {
   const goToSlide = (index: number) => {
     setCurrentSlide(index);
   };
-
   return (
     <div className="relative w-full h-[300px] md:h-[350px] lg:h-[400px] overflow-hidden rounded-lg mb-8">
       <div
