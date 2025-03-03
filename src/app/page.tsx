@@ -1,6 +1,5 @@
 "use client";
 import Sidebar from "@/components/Sidebar";
-import HeroSection from "@/components/HeroSection ";
 import BestSellers from "@/components/BestSellers ";
 import HotProduct from "@/components/HotProduct";
 import DiscountBanner from "@/components/DiscountBanner";
@@ -13,6 +12,7 @@ import Newsletter from "@/components/Newsletter";
 import DownloadApp from "@/components/DownloadApp";
 import FeatureSection from "@/components/FeatureSection";
 import Banner from "@/components/Banner";
+import HeroSlider from "@/components/HeroSlider";
 
 const HomePage = () => {
   return (
@@ -25,7 +25,7 @@ const HomePage = () => {
           <CustomerComment />
         </div>
         <div className="w-full">
-          <HeroSection />
+          <HeroSlider/>
           <BestSellers />
           <Banner/>
           <HotProduct />
