@@ -24,7 +24,7 @@ interface ProductGridWithBannerProps {
 }
 
 const ProductGridWithBanner: React.FC<ProductGridWithBannerProps> = ({ products, title = "BEST SELLERS" }) => {
-  // Split products into two groups - before and after banner
+  
   const leftProducts = products.slice(0, 4)
   const rightProducts = products.slice(4, 8)
 
@@ -41,7 +41,7 @@ const ProductGridWithBanner: React.FC<ProductGridWithBannerProps> = ({ products,
       </div>
 
       <div className="grid grid-cols-5 gap-4">
-        {/* Left side: 2x2 grid of products */}
+        
         <div className="col-span-2 grid grid-cols-2 gap-4">
           {leftProducts.map((product) => (
             <div key={product.id} className="product-item">
@@ -59,7 +59,7 @@ const ProductGridWithBanner: React.FC<ProductGridWithBannerProps> = ({ products,
           ))}
         </div>
 
-        {/* Banner Section in the middle */}
+      
         <div className="col-span-1 flex flex-col items-center justify-center bg-gray-200 p-6 rounded-lg h-[403px]">
           <p className="text-sm text-red-500 font-light mb-1">delicious</p>
           <h3 className="font-light text-lg text-gray-800 mb-0">The freshest of</h3>
@@ -72,7 +72,7 @@ const ProductGridWithBanner: React.FC<ProductGridWithBannerProps> = ({ products,
           </Button>
         </div>
 
-        {/* Right side: 2x2 grid of products */}
+        
         <div className="col-span-2 grid grid-cols-2 gap-4">
           {rightProducts.map((product) => (
             <div key={product.id} className="product-item">

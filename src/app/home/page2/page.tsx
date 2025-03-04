@@ -1,14 +1,10 @@
-
-
 import BannerCardsSection from "@/components/BannerCardsSection";
 import HeroSlider from "@/components/HeroSlider";
 import ProductGridWithBanner from "@/components/ProductGridWithBanner";
 import ProductSpecialOfferGrid from "@/components/ProductSpecialOfferGrid";
 import { Button } from "@/components/ui/button";
 
-
-
-  const products = [
+const products = [
     {
       id: "1",
       title: "All-Natural Indian-Style Chicken Meatballs",
