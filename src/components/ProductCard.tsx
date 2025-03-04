@@ -10,7 +10,6 @@ interface ProductCardProps {
   discount?: number;
   rating: number;
   reviews: number;
-  image: string;
   store?:number
   
 }

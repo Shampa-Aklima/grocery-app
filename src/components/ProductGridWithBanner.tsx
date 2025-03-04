@@ -2,6 +2,7 @@
 
 import type React from "react"
 import { Plus, Minus } from "lucide-react"
+import { Button } from "./ui/button"
 import { useState } from "react"
 import Image from "next/image"
 
@@ -59,14 +60,17 @@ const ProductGridWithBanner: React.FC<ProductGridWithBannerProps> = ({ products,
         </div>
 
       
-        <div className="col-span-1 flex flex-col items-center justify-center bg-gray-200 p-6 rounded-lg h-[403px]">
+        <div className="col-span-1 flex flex-col items-center justify-center bg-gray-200 p-6 rounded-lg h-[730px]">
           <p className="text-sm text-red-500 font-light mb-1">delicious</p>
           <h3 className="font-light text-lg text-gray-800 mb-0">The freshest of</h3>
           <p className="font-bold text-lg text-gray-800 mb-2">all products</p>
           <p className="text-xs text-gray-500 font-light mb-1">just-in deals</p>
           <p className="text-xs text-gray-500 font-light mb-1">only-from</p>
           <span className="text-3xl font-bold text-[#D51243]">$14.99</span>
-          </div>
+          <Button className="bg-[#35AFA0] hover:bg-[#35AFA0]/90 text-white rounded-full px-6 py-2 text-sm mt-2">
+            Shop Now
+          </Button>
+        </div>
 
         
         <div className="col-span-2 grid grid-cols-2 gap-4">

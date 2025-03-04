@@ -1,16 +1,18 @@
 "use client";
 
-import { ChevronLeft, ChevronRight } from "lucide-react";
-import { useRef, useState } from "react";
-import { Swiper, SwiperSlide } from "swiper/react";
-import { Navigation } from "swiper/modules";
-import ProductCard from "./ProductCard";
-import "swiper/css";
-import "swiper/css/navigation";
-import "swiper/swiper-bundle.css";
-import type { Swiper as SwiperType } from "swiper";
+import ProductList from "./ProductList";
 
-const products = [
+// import { ChevronLeft, ChevronRight } from "lucide-react";
+// import { useRef, useState } from "react";
+// import { Swiper, SwiperSlide } from "swiper/react";
+// import { Navigation } from "swiper/modules";
+// import ProductCard from "./ProductCard";
+// import "swiper/css";
+// import "swiper/css/navigation";
+// import "swiper/swiper-bundle.css";
+// import type { Swiper as SwiperType } from "swiper";
+
+const bestSellers = [
   {
     id: 1,
     title: "All Natural Italian-Style Chicken Meatballs",
@@ -52,28 +54,20 @@ const products = [
 ];
 
 const BestSellers = () => {
-  const [swiper, setSwiper] = useState<SwiperType | null>(null);
-  const prevRef = useRef<HTMLButtonElement>(null);
-  const nextRef = useRef<HTMLButtonElement>(null);
+  // const [swiper, setSwiper] = useState<SwiperType | null>(null);
+  // const prevRef = useRef<HTMLButtonElement>(null);
+  // const nextRef = useRef<HTMLButtonElement>(null);
 
   return (
     <div className="mb-10">
       <div className="flex items-center justify-between mb-2">
-        <h2 className="text-lg font-bold uppercase">
-          Hot product for this week
-        </h2>
-        <a
-          href="#"
-          className="text-xs flex items-center justify-center text-[#9B9BB4] bg-[#D9D9E9] h-8 w-28 rounded-xl"
-        >
-          View all →
-        </a>
+       
       </div>
       <p className="text-xs text-gray-500 mb-4">
         Dont miss this opportunity at a special discount just for this week.
       </p>
 
-      <div className="relative mx-auto" style={{ width: "870px" }}>
+      {/* {/* <div className="relative mx-auto" style={{ width: "1170px" }}>
         <Swiper
           modules={[Navigation]}
           spaceBetween={16}
@@ -106,8 +100,9 @@ const BestSellers = () => {
         >
           <ChevronRight className="w-4 h-4" />
         </button>
-      </div>
-    </div>
+      </div> */}
+      <ProductList products={bestSellers} />
+    </div> 
   );
 };
 

@@ -17,32 +17,34 @@ import HeroSlider from "@/components/HeroSlider";
 
 
 const HomePage = () => {
-    return (
-      
-      <div className="w-full max-w-[1200px] mx-auto space-x-6 mt-16">
+  return (
     
-        <div className="flex">
-          <div className="w-full">
-            <Sidebar />
-            <DownloadApp />
-            <TrendingSearch />
-            <CustomerComment />
-          </div>
-          <div className="w-full">
-            <HeroSlider/>
-            <BestSellers />
-            <Banner/>
-            <HotProduct />
-            <DiscountBanner />
-            <ProductGrid />
-            <CategoryCards />
-          </div>
-        </div>
-        <GroceryCategoriesGrid />
-        <Newsletter />
-        <FeatureSection />    
-      </div>
-    );
-  };
-  export default HomePage;
+    <div className="container max-w-[100%] mx-auto mt-16 ">
   
+      <div className="flex justify-evenly ">
+        <div className=" max-w-[25%]">
+          <Sidebar />
+          <DownloadApp />
+          <TrendingSearch />
+          <CustomerComment />
+        </div>
+        <div className=" max-w-[65%]">
+          <HeroSlider/>
+          <BestSellers />
+          <Banner/>
+          <HotProduct />
+          <DiscountBanner />
+          <ProductGrid />
+          <CategoryCards />
+        </div>
+      </div>
+      <div className="w-full p-10">
+      <GroceryCategoriesGrid />
+      <Newsletter />
+      <FeatureSection /> 
+      </div>
+         
+    </div>
+  );
+};
+export default HomePage;

@@ -43,7 +43,6 @@ const BannerCards = ({ banners }: BannerCardsProps) => {
  
 export default BannerCards;
 
-    <div >
-    </div>
+   
     
           
