@@ -2,8 +2,10 @@
 
 import BannerCardsSection from "@/components/BannerCardsSection";
 import HeroSlider from "@/components/HeroSlider";
+import ProductGridWithBanner from "@/components/ProductGridWithBanner";
 import ProductSpecialOfferGrid from "@/components/ProductSpecialOfferGrid";
 import { Button } from "@/components/ui/button";
+
 
 const Page2 = () => {
   return (
@@ -65,6 +67,7 @@ const Page2 = () => {
             <ProductSpecialOfferGrid />
           </div>
          <BannerCardsSection/>
+         <ProductGridWithBanner/>
         </div>
       </div>
     </div>
