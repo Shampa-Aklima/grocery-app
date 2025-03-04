@@ -7,6 +7,99 @@ import ProductSpecialOfferGrid from "@/components/ProductSpecialOfferGrid";
 import { Button } from "@/components/ui/button";
 
 
+
+  const products = [
+    {
+      id: "1",
+      title: "All-Natural Indian-Style Chicken Meatballs",
+      originalPrice: 9.25,
+      price: 7.25,
+      rating: 5,
+      reviews: 1,
+      store: "IN STOCK",
+      discount: 20,
+      image: "/placeholder.svg?height=200&width=200",
+    },
+    {
+      id: "2",
+      title: "Annie's Homegrown Sweet & Salty Kettle Corn",
+      originalPrice: 5.25,
+      price: 3.2,
+      rating: 4,
+      reviews: 1,
+      store: "IN STOCK",
+      discount: 20,
+      image: "/placeholder.svg?height=200&width=200",
+    },
+    {
+      id: "3",
+      title: "Blue Diamond Almonds Lightly Salted",
+      originalPrice: 12.99,
+      price: 10.99,
+      rating: 5,
+      reviews: 1,
+      store: "IN STOCK",
+      discount: 20,
+      image: "/placeholder.svg?height=200&width=200",
+    },
+    {
+      id: "4",
+      title: "Blueberries - 1 Pint Package",
+      originalPrice: 4.99,
+      price: 3.99,
+      rating: 4,
+      reviews: 1,
+      store: "IN STOCK",
+      discount: 20,
+      image: "/placeholder.svg?height=200&width=200",
+    },
+    {
+      id: "5",
+      title: "Fage Sport Chop Cheese Creamy Original",
+      originalPrice: 12.5,
+      price: 10.5,
+      rating: 5,
+      reviews: 1,
+      store: "IN STOCK",
+      discount: 20,
+      image: "/placeholder.svg?height=200&width=200",
+    },
+    {
+      id: "6",
+      title: "Foster Farms Takeout Crispy Classic Buffalo Wings",
+      originalPrice: 54.99,
+      price: 49.99,
+      rating: 4,
+      reviews: 1,
+      store: "IN STOCK",
+      discount: 20,
+      image: "/placeholder.svg?height=200&width=200",
+    },
+    {
+      id: "7",
+      title: "Fresh Organic Broccoli Crowns",
+      originalPrice: 5.75,
+      price: 4.45,
+      rating: 5,
+      reviews: 1,
+      store: "IN STOCK",
+      discount: 20,
+      image: "/placeholder.svg?height=200&width=200",
+    },
+    {
+      id: "8",
+      title: "Chobani Complete Vanilla Greek Yogurt",
+      originalPrice: 5.99,
+      price: 4.49,
+      rating: 4,
+      reviews: 1,
+      store: "IN STOCK",
+      discount: 20,
+      image: "/placeholder.svg?height=200&width=200",
+    },
+  ]
+
+
 const Page2 = () => {
   return (
     <div className="container max-w-[1170px] mx-auto">
@@ -67,7 +160,10 @@ const Page2 = () => {
             <ProductSpecialOfferGrid />
           </div>
          <BannerCardsSection/>
-         <ProductGridWithBanner/>
+         <div className="p-4 bg-gray-50 min-h-screen">
+      <ProductGridWithBanner products={products} />
+    </div>
+         
         </div>
       </div>
     </div>
