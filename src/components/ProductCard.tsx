@@ -10,7 +10,7 @@ interface  Product {
   discount?: number,
   rating: number,
   reviews: number,
-  store?:number
+  store?:string
   
 }
 
@@ -38,7 +38,7 @@ const ProductCard=({
 
       <div className="mt-2 flex flex-col flex-grow bg-[[#C4C4C4]]">
         <div className="text-xs text-instacart-green font-semibold mt-2">
-         {store} IN STOCK
+         {store} 
         </div>
         <h3 className="text-sm font-medium line-clamp-2 h-10">{title}</h3>
 
