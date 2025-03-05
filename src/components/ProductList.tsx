@@ -25,8 +25,7 @@ interface ProductListProps {
 }
 
 const ProductList: React.FC<ProductListProps> = ({ products }) => {
-  
-    const [swiper, setSwiper] = useState<SwiperType | null>(null);
+  const [swiper, setSwiper] = useState<SwiperType | null>(null);
   const prevRef = useRef<HTMLButtonElement>(null);
   const nextRef = useRef<HTMLButtonElement>(null);
 
@@ -47,15 +46,15 @@ const ProductList: React.FC<ProductListProps> = ({ products }) => {
         Dont miss this opportunity at a special discount just for this week.
       </p>
 
-      <div className="relative mx-auto" style={{ width: "1170px" }}>
+      <div className="relative mx-auto" style={{ width: "870px" }}>
         <Swiper
           modules={[Navigation]}
           spaceBetween={16}
           slidesPerView={4}
           onSwiper={setSwiper}
-          className="!overflow-visible"
+          className="overflow-visible !important"
         >
-          {products.map((product) => (
+          {products?.map((product) => (
             <SwiperSlide key={product.id} className="!w-[200px] h-auto">
               <div className="h-full">
                 <ProductCard {...product} />

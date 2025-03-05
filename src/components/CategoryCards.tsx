@@ -1,63 +1,54 @@
 import Image from "next/image";
 import Link from "next/link";
 
-const categories = [
-  {
-    id: 1,
-    title: "Legumes & Cereals",
-    // subTitle:"Weekend Discount",
-    description: "Feed your family the best",
-    discount: 40,
-    image: "/placeholder.svg?height=230&width=420",
-    link: "/shop-now",
-  },
-  {
-    id: 2,
-    title: "Dairy & Eggs",
-    // subTitle:"Weekend Discount",
-    description: "A different kind of grocery store",
-    discount: 40,
-    image: "/placeholder.svg?height=230&width=420",
-    link: "/shop-now",
-  },
-];
+interface Category {
+  id: number;
+  title: string;
+  subTitle?: string; // Optional
+  description: string;
+  discount?: number;
+  image: string;
+  link: string;
+  color?: string; // Optional
+  btn?: string; // Optional
+}
 
-const CategoryCards = () => {
+interface CategoryCardsProps {
+  categories: Category[]; // Proper prop typing for categories
+}
+
+const CategoryCards = ({ categories }: CategoryCardsProps) => {
   return (
-    <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-8">
+    <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-8 items-start">
       {categories.map((category) => (
         <div
           key={category.id}
           className="relative overflow-hidden rounded-lg bg-[#C4C4C4]"
+          style={{ backgroundColor: category.color }}
         >
           <Image
-            src={category.image || ""}
-            alt={category.title}
-            width={420}
-            height={230}
-            className="w-full h-48 object-cover"
+            src={category.image} // Make sure category.image is a valid image URL or path
+            alt={""}
+            width={48}
+            height={52}
+            className="object-cover rounded-lg mb-4"
           />
-          <div className="absolute inset-0 bg-[#C4C4C4]/40 p-6 flex flex-col justify-between">
-            <div>
-              <span className=" text-sm font-dosis text-[#00B853] font-semibold">
-                WEEKEND DISCOUNT {category.discount}%
-              </span>
-              {/* <h4 className="">{category.subTitle}</h4> */}
-              <h3 className="text-xl font-bold text-[#3E445A]">
-                {category.title}
-              </h3>
-              <p className="text-sm text-[#9B9BB4] mt-1">
-                {category.description}
-              </p>
+          <div className="p-4">
+            {category.subTitle && (
+              <div className="text-xs text-white bg-gray-800 rounded-full p-1 w-32 text-center">
+                {category.subTitle}
+              </div>
+            )}
+            <h3 className="text-lg font-semibold mt-4">{category.title}</h3>
+            <p className="text-sm text-gray-600 mt-2">{category.description}</p>
+            <Link href={category.link} passHref>
+            <div
+              className="mt-4 inline-block px-4 py-2 bg-blue-500 text-white rounded-full"
+              style={{ backgroundColor: category.btn }}
+            >
+              Shop Now
             </div>
-            <div>
-              <Link
-                href={category.link}
-                className="text-white text-sm bg-[#C2C2D3] px-4 py-2 rounded-full hover:bg-opacity-90 transition-colors"
-              >
-                Shop Now
-              </Link>
-            </div>
+          </Link>
           </div>
         </div>
       ))}

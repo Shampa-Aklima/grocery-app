@@ -1,9 +1,10 @@
-import FeatureProducts from "@/components/ProductList";
+
 import HeroSlider from "@/components/HeroSlider";
 import ProductGridWithBanner from "@/components/ProductGridWithBanner";
 import ProductSpecialOfferGrid from "@/components/ProductSpecialOfferGrid";
 import { Button } from "@/components/ui/button";
 import WeekendDiscountCardSection from "@/components/WeekendDiscountCardSection";
+import FeatureProductCarousel from "@/components/FeatureProductCarousel";
 
 const products = [
   {
@@ -156,8 +157,8 @@ const Page2 = () => {
       <div className="grid grid-cols-3">
         <WeekendDiscountCardSection />
       </div>
-      <div className="w-full">
-      <FeatureProducts/>
+      <div className="w-max-[1200px]">
+      <FeatureProductCarousel/>
       </div>
       
     </div>
