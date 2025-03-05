@@ -2,25 +2,25 @@ import Image from "next/image";
 import Link from "next/link";
 
 interface Category {
-  id: number;
-  title: string;
-  subTitle?: string; // Optional
-  description: string;
-  discount?: number;
-  image: string;
-  link: string;
-  color?: string; // Optional
-  btn?: string; // Optional
+  id: number,
+  title: string,
+  subTitle?: string,
+  description: string,
+  discount?: number,
+  image: string,
+  link: string,
+  color?: string,
+  btn?: string ,
 }
 
 interface CategoryCardsProps {
-  categories: Category[]; // Proper prop typing for categories
+  categories: Category[]; 
 }
 
 const CategoryCards = ({ categories }: CategoryCardsProps) => {
   return (
     <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-8 items-start">
-      {categories.map((category) => (
+      {categories?.map((category) => (
         <div
           key={category.id}
           className="relative overflow-hidden rounded-lg bg-[#C4C4C4]"

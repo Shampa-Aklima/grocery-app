@@ -1,18 +1,27 @@
 "use client";
 
-import ProductList from "./ProductList";
+import { ChevronLeft, ChevronRight } from "lucide-react";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Navigation } from "swiper/modules";
+import ProductCard from "./ProductCard";
+import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/swiper-bundle.css";
+import type { Swiper as SwiperType } from "swiper";
+import { useState } from "react";
 
-// import { ChevronLeft, ChevronRight } from "lucide-react";
-// import { useRef, useState } from "react";
-// import { Swiper, SwiperSlide } from "swiper/react";
-// import { Navigation } from "swiper/modules";
-// import ProductCard from "./ProductCard";
-// import "swiper/css";
-// import "swiper/css/navigation";
-// import "swiper/swiper-bundle.css";
-// import type { Swiper as SwiperType } from "swiper";
+interface Product {
+  id: number,
+  title: string,
+  price?: number,
+  originalPrice?: number,
+  discount?: number,
+  rating: number,
+  reviews: number,
+  image: string,
+}
 
-const bestSellers = [
+const bestSellers: Product[] = [
   {
     id: 1,
     title: "All Natural Italian-Style Chicken Meatballs",
@@ -54,20 +63,16 @@ const bestSellers = [
 ];
 
 const BestSellers = () => {
-  // const [swiper, setSwiper] = useState<SwiperType | null>(null);
-  // const prevRef = useRef<HTMLButtonElement>(null);
-  // const nextRef = useRef<HTMLButtonElement>(null);
+  const [swiper, setSwiper] = useState<SwiperType | null>(null);
 
   return (
-    <div className="mb-10">
-      <div className="flex items-center justify-between mb-2">
-       
-      </div>
+    <div className="mb-10 p-10">
+      <h3>Best Sellers</h3>
       <p className="text-xs text-gray-500 mb-4">
         Dont miss this opportunity at a special discount just for this week.
       </p>
 
-      {/* {/* <div className="relative mx-auto" style={{ width: "1170px" }}>
+      <div className="relative mx-auto" style={{ width: "1170px" }}>
         <Swiper
           modules={[Navigation]}
           spaceBetween={16}
@@ -75,7 +80,7 @@ const BestSellers = () => {
           onSwiper={setSwiper}
           className="!overflow-visible"
         >
-          {products.map((product) => (
+          {bestSellers.map((product) => (
             <SwiperSlide key={product.id} className="!w-[200px] h-auto">
               <div className="h-full">
                 <ProductCard {...product} />
@@ -85,24 +90,22 @@ const BestSellers = () => {
         </Swiper>
 
         <button
-          ref={prevRef}
           onClick={() => swiper?.slidePrev()}
           className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 w-8 h-8 bg-white shadow-md rounded-full flex items-center justify-center z-20 hover:bg-gray-50 transition-colors"
           aria-label="Previous slide"
         >
           <ChevronLeft className="w-4 h-4" />
         </button>
+
         <button
-          ref={nextRef}
           onClick={() => swiper?.slideNext()}
           className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 w-8 h-8 bg-white shadow-md rounded-full flex items-center justify-center z-20 hover:bg-gray-50 transition-colors"
           aria-label="Next slide"
         >
           <ChevronRight className="w-4 h-4" />
         </button>
-      </div> */}
-      <ProductList products={bestSellers} />
-    </div> 
+      </div>
+    </div>
   );
 };
 

@@ -18,6 +18,7 @@ interface Product {
   rating: number;
   reviews: number;
   image: string;
+  store:number
 }
 
 interface ProductListProps {
@@ -33,7 +34,7 @@ const ProductList: React.FC<ProductListProps> = ({ products }) => {
     <div className="mb-10">
       <div className="flex items-center justify-between mb-2">
         <h2 className="text-lg font-bold uppercase">
-          Hot product for this week
+        Best Sellers
         </h2>
         <a
           href="#"
@@ -43,10 +44,9 @@ const ProductList: React.FC<ProductListProps> = ({ products }) => {
         </a>
       </div>
       <p className="text-xs text-gray-500 mb-4">
-        Dont miss this opportunity at a special discount just for this week.
-      </p>
+      Do not miss the current offers until the end of March. </p>
 
-      <div className="relative mx-auto" style={{ width: "870px" }}>
+      <div className="relative mx-auto" >
         <Swiper
           modules={[Navigation]}
           spaceBetween={16}

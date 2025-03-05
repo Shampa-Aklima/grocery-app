@@ -199,6 +199,7 @@ const SiteHeader = () => {
                 <Link href="/blog" className="font-medium">
                   BLOG
                 </Link>
+            
                 <Link href="/contact" className="font-medium">
                   CONTACT
                 </Link>

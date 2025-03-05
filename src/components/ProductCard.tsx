@@ -3,13 +3,13 @@
 import { Minus, Plus } from "lucide-react";
 import { useState } from "react";
 
-interface ProductCardProps {
-  title: string;
-  price?: number;
-  originalPrice?: number;
-  discount?: number;
-  rating: number;
-  reviews: number;
+interface  Product {
+  title: string,
+  price?: number,
+  originalPrice?: number,
+  discount?: number,
+  rating: number,
+  reviews: number,
   store?:number
   
 }
@@ -23,7 +23,7 @@ const ProductCard=({
   reviews,
   store
  
-}: ProductCardProps) =>{
+}: Product) =>{
   const [quantity, setQuantity] = useState(0);
 
   return (

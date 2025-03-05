@@ -1,5 +1,4 @@
-import ProductList from "./ProductList";
-
+import FeatureProducts from "./ProductList";
 
 const featureproducts = [
   {
@@ -54,13 +53,11 @@ const featureproducts = [
 
 
 const FeatureProductCarousel = () => {
-  
     return (
-      <div>
-        <ProductList products={featureproducts} />
-      </div>
+        <div>
+           <FeatureProducts featureproducts={featureproducts}/>
+        </div>
     );
-  };
-  
+};
 
 export default FeatureProductCarousel;
