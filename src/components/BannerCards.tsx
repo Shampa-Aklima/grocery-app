@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 
+
 interface Banners {
   id: number,
   title: string,
@@ -36,7 +37,7 @@ const BannerCards = ({ banners }: BannerCardsProps) => {
               <p className="text-sm text-[#9B9BB4] mb-2">{banner.description}</p>
               <Link href={banner.link}  className="text-[#40B8AE] font-medium">
                 Shop Now</Link>
-               
+              
               
               
             </div>

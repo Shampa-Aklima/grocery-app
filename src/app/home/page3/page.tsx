@@ -2,6 +2,7 @@ import BannerCards from "@/components/BannerCards";
 import BestSellers from "@/components/BestSellers ";
 import GroceryCategoriesGrid from "@/components/GroceryCategoriesGrid";
 import HeroSlider from "@/components/HeroSlider";
+import ProductGrid from "@/components/ProductGrid";
 
 interface Banner {
   id: number;
@@ -34,6 +35,18 @@ const banners: Banner[] = [
   },
 ];
 
+  interface Product {
+    id: string;  
+    title: string;
+    price?: number;
+    originalPrice?: number;
+    discount?: number;
+    rating: number;
+    reviews: number;
+    store?: number;
+    image: string;
+  }
+
 export default function Home3() {
   return (
     <div className="container mx-auto min-w-[1200px] px-4 py-8">
@@ -44,6 +57,7 @@ export default function Home3() {
       <div className="h-[64px] w-[1200px] bg-[#FBEACF] p-5 text-center">
         <h3 className="text-xl text-[#202435]  uppercase">Super discount for your <span className="font-bold">first purchase.</span> </h3>
       </div>
+      <ProductGrid/>
     </div>
   );
 }
