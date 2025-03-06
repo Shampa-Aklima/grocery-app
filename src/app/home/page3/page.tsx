@@ -190,7 +190,7 @@ const blogs: Blog[] = [
     date: "Jan 13 2025",
   },
 ];
-export default function Home3() {
+ const Home3 =()=> {
   return (
     <div className="container max-w-[1200px] mx-auto">
       <HeroSlider />
@@ -280,3 +280,4 @@ export default function Home3() {
     </div>
   );
 }
+export default Home3;

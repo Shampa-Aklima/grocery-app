@@ -146,7 +146,7 @@ const home4Products = [
   },
 ];
 
-const page4 = () => {
+const Home4 = () => {
   return (
     <div className="container w-[1200px] mx-auto mt-10 ">
       <div className="flex justify-between gap-10" >
@@ -223,4 +223,4 @@ const page4 = () => {
   );
 };
 
-export default page4;
+export default Home4;
