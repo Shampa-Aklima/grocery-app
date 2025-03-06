@@ -1,21 +1,77 @@
-
+import BannerCards from "@/components/BannerCards";
+import BlogCard from "@/components/BlogCard";
 import HeroSlider from "@/components/HeroSlider";
 import ProductGridWithBanner from "@/components/ProductGridWithBanner";
 import ProductSpecialOfferGrid from "@/components/ProductSpecialOfferGrid";
 import { Button } from "@/components/ui/button";
-import WeekendDiscountCardSection from "@/components/WeekendDiscountCardSection";
-import FeatureProductCarousel from "@/components/FeatureProductCarousel";
+
+interface Banners {
+  id: number;
+  title: string;
+  subTitle: string;
+  description: string;
+  image: string;
+  link: string;
+  bgColor: string;
+}
+const banners: Banner[] = [
+  {
+    id: 1,
+    title: "Cookie and Ice Cream",
+    subTitle: "Weekend Discount 40%",
+    description: "Up to 50% off on all products!",
+    image: "/images/winter-sale.jpg",
+    link: "/shop now",
+    bgColor: "#A2D1D6",
+  },
+  {
+    id: 2,
+    title: "Cookie and Ice Cream",
+    subTitle: "Weekend Discount 40%",
+    description: "Up to 50% off on all products!",
+    image: "/images/winter-sale.jpg",
+    link: "/shop now",
+    bgColor: "#FFD8E5",
+  },
+  {
+    id: 3,
+    title: "Natural Eggs",
+    subTitle: "Weekend Discount 40%",
+    description: "Eat one every day",
+    image: "/images/winter-sale.jpg",
+    link: "/shop now",
+    bgColor: "#C4C4C4",
+  },
+  {
+    id: 4,
+    title: "Taste the Best",
+    subTitle: "Weekend Discount 40%",
+    description: "Shine the morning",
+    image: "/images/winter-sale.jpg",
+    link: "/shop now",
+    bgColor: "#C4C4C4",
+  },
+  {
+    id: 5,
+    title: "Ditch the Junk",
+    subTitle: "Weekend Discount 40%",
+    description: "Breakfast made better",
+    image: "/images/winter-sale.jpg",
+    link: "/shop now",
+    bgColor: "#C4C4C4",
+  },
+];
 
 const products = [
   {
     id: "1",
-    title: "All-Natural Indian-Style Chicken Meatballs",
-    originalPrice: 9.25,
-    price: 7.25,
-    rating: 5,
+    title: "Zevia Kidz StrawberryLemonade Zero Calorie",
+    originalPrice: 7.95,
+    price: 5.95,
+    rating: 4,
     reviews: 1,
     store: "IN STOCK",
-    discount: 20,
+    discount: 25,
   },
   {
     id: "2",
@@ -88,7 +144,26 @@ const products = [
     discount: 20,
   },
 ];
-
+const blogs:Blog[] = [
+  {
+    id: 1,
+    category:"Grocery",
+    title: "But I must explain to you how all this mistaken idea",
+    date:"Jan 13 2025"
+  },
+  {
+    id: 2,
+    category:"Grocery",
+    title: "The Problem With Typefaces on the Web",
+    date:"Jan 13 2025"
+  },
+  {
+    id: 3,
+    category:"Grocery",
+    title: "But I must explain to you how all this mistaken idea",
+    date:"Jan 13 2025"
+  }
+]
 const Page2 = () => {
   return (
     <div className="container max-w-[1200px] mx-auto">
@@ -148,19 +223,18 @@ const Page2 = () => {
           <div>
             <ProductSpecialOfferGrid />
           </div>
-
+          <BannerCards banners={banners.slice(-3)} />
           <div className="p-4 bg-gray-50 min-h-screen">
             <ProductGridWithBanner products={products} />
           </div>
+          <div className="h-[64px] w-[1200px] bg-[#FFEEF2] p-5 text-center">
+            <h3 className="text-xl text-[#202435] uppercase font-bold"> Save an Extra 5-10 % On Every Autoship Order!  </h3>
+          </div>
+          <BlogCard blogs={blogs}/>
+
+         
         </div>
       </div>
-      <div className="grid grid-cols-3">
-        <WeekendDiscountCardSection />
-      </div>
-      <div className="w-max-[1200px]">
-      <FeatureProductCarousel/>
-      </div>
-      
     </div>
   );
 };

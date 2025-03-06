@@ -1,29 +1,27 @@
- "use client";
+"use client";
 
 import { Minus, Plus } from "lucide-react";
 import { useState } from "react";
 
-interface  Product {
-  title: string,
-  price?: number,
-  originalPrice?: number,
-  discount?: number,
-  rating: number,
-  reviews: number,
-  store?:string
-  
+interface Product {
+  title: string;
+  price?: number;
+  originalPrice?: number;
+  discount?: number;
+  rating: number;
+  reviews: number;
+  store?: string;
 }
 
-const ProductCard=({
+const ProductCard = ({
   title,
   price,
   originalPrice,
   discount,
   rating,
   reviews,
-  store
- 
-}: Product) =>{
+  store,
+}: Product) => {
   const [quantity, setQuantity] = useState(0);
 
   return (
@@ -38,7 +36,7 @@ const ProductCard=({
 
       <div className="mt-2 flex flex-col flex-grow bg-[[#C4C4C4]]">
         <div className="text-xs text-instacart-green font-semibold mt-2">
-         {store} 
+          {store}
         </div>
         <h3 className="text-sm font-medium line-clamp-2 h-10">{title}</h3>
 
@@ -48,7 +46,7 @@ const ProductCard=({
               <svg
                 key={i}
                 className={`w-3 h-3 ${
-                  i < (rating ||0 )?"text-star-yellow" : "text-gray-300"
+                  i < (rating || 0) ? "text-star-yellow" : "text-gray-300"
                 }`}
                 fill="currentColor"
                 viewBox="0 0 20 20"
@@ -69,12 +67,12 @@ const ProductCard=({
             </span>
           )}
           <span className="text-base font-semibold ml-2">
-          ${price !== undefined ? price.toFixed(2) : "N/A"}
+            ${price !== undefined ? price.toFixed(2) : "N/A"}
           </span>
         </div>
 
         <div className="flex items-center justify-center mt-2 w-34 h-12 border-2 border-[#EDEEF5] bg-transparent rounded-full">
-          <button 
+          <button
             className="w-8 h-8 flex items-center justify-center border-3 border-gray-300 rounded-full"
             onClick={() => setQuantity(Math.max(0, quantity - 1))}
           >
@@ -91,5 +89,5 @@ const ProductCard=({
       </div>
     </div>
   );
-}
+};
 export default ProductCard;
