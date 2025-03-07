@@ -39,7 +39,7 @@ const TrendingSearch = () => {
       <h2 className="text-sm font-semibold mb-4 uppercase tracking-wider mt-5">
         Trending Search
       </h2>
-      <div className="space-y-6 p-4 border-2 border-[#EDEEF5]">
+      <div className="space-y-6 p-4 border-2 border-[#EDEEF5] w-[270px]">
         {trendingProducts.map((product) => (
           <div key={product.id} className="flex gap-3">
             <div className="w-16 h-16 bg-gray-200 rounded-sm overflow-hidden flex-shrink-0"></div>

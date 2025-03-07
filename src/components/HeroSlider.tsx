@@ -102,8 +102,10 @@ const HeroSlider = () => {
           >
             <div className="max-w-lg radius-xl">
               <div className="mb-2">
-                <span className="text-xs font-dosis md:text-sm uppercase text-[#202435]">EXCLUSIVE OFFER</span>
-                <span className="ml-2 bg-[#C4C4C4] text-white text-xs px-2 py-0.5 rounded">{slide.discount}</span>
+              <span className="text-xs font-dosis md:text-sm uppercase text-[#202435] ">
+  EXCLUSIVE OFFER
+</span>
+                <span className="ml-2 h-24 bg-[#C4C4C4] text-[#038E42] text-xs px-3 py-0.5 rounded bg-gradient-to-bl from-[#00B85333] to-[#20375800]">{slide.discount}</span>
               </div>
 
               <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-[#202435] mb-2">{slide.title}</h2>

@@ -1,6 +1,6 @@
 const CustomerComment = () => {
   return (
-    <div className="h-[233px] w-[270px] mt-5 mb-10">
+    <div className="h-[233px] w-[270px] mt-10 mb-10">
       <h2 className="text-sm font-semibold uppercase tracking-wider mb-4">
         Customer Comment
       </h2>

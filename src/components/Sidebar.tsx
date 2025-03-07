@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { Button } from "./ui/button";
+import DownloadApp from "./DownloadApp";
 import {
   Coffee,
   Cookie,
@@ -10,6 +11,9 @@ import {
   ShoppingCart,
   Drumstick,
 } from "lucide-react";
+import TrendingSearch from "./TrendingSearch";
+import CustomerComment from "./CustomerComment";
+
 
 const categories = [
   { name: "Beverages", icon: Coffee },
@@ -27,23 +31,23 @@ const categories = [
 
 const Sidebar = () => {
   return (
-    <div className=" w-[270px] space-y-6 mx-auto flex-col py-2 ">
-      <div className="w-[270px] border-2 border-[#e5e5e5] space-y-3">
+    <div className=" w-[270px] space-y-6 mx-auto flex-col py-10 ">
+      <div className="w-[270px] border-2 border-[#e5e5e5] space-y-4 py-8">
         <div className="grid grid-cols-1">
           {categories.slice(0, 8).map((category, index) => (
             
             <div key={index} className="flex justify-start items-center space-x-3 p-4 ">
               
               <Link href="#"/>  
-              <category.icon className="w-6 h-6 text-gray-600" />
-                <span className="font-medium text-[#3E445A]">
+              <category.icon className="w-6 h-6 text[#3E445A]" />
+                <span className="font-medium text-xm text-[#3E445A]">
                   {category.name}
                 </span>
               
             </div>
             
           ))}
-          <div className="border-t-2 font-medium text-[#3E445A] px-6 py-6 ">
+          <div className="border-t-2 font-medium text-[#3E445A] px-6 py-6 space-y-3 ">
             {categories.slice(8).map((category, index) => (
               <div key={index} >
                 <Link href="#">
@@ -91,6 +95,9 @@ const Sidebar = () => {
           </Button>
         </div>
       </div>
+      <DownloadApp/>
+      <TrendingSearch />
+      <CustomerComment />
     </div>
   );
 };

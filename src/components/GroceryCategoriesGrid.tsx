@@ -19,7 +19,7 @@ const categories: Category[] = [
 const GroceryCategoriesGrid: React.FC = () => {
   return (
     <div>
-      <div className="w-6xl m-10 px-4">
+      <div className="container w-full mx-auto m-5 pl-4">
         <div>
             <GroceryCategories categories={categories} />
         </div>

@@ -3,14 +3,15 @@ import { Smartphone } from "lucide-react"
 
 const DownloadApp=()=> {
   return (
-    <div className="flex flex-col p-4">
+    <div className="flex flex-col w-full h-[300px]  text-gray-400 ">
       {[1, 2, 3].map((item) => (
         <div
           key={item}
-          className="flex items-center space-x-3 border-1 text-gray-400 border-gray-500 p-5 "
+          className="flex justify-between items-center gap-3 text-gray-400 space-y-3 border-2 border-gray-100 p-4"
         >
-          <Smartphone className="w-5 h-5" />
-          <span className="text-sm">Download the Revive App to your iPhone</span>
+          <Smartphone className="w-8 h-8" />
+          <span className="text-xm">Download the Bacola App to
+          your Phone.</span>
         </div>
       ))}
     </div>
