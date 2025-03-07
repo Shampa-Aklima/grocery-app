@@ -20,8 +20,7 @@ interface ProductProps {
 const ProductList = ({ products }: ProductProps) => {
   return (
     <div>
-     
-      <ProductGrid products={products} />
+     <ProductGrid products={products} />
     </div>
   );
 };

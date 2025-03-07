@@ -18,12 +18,12 @@ interface BannerCardsProps {
 
 const BannerCards = ({ banners }: BannerCardsProps) => {
   return (
-    <div className="flex justify-center items-center gap-10 mt-5">
+    <div className="w-full flex justify-start items-start gap-10 mt-5">
       {banners.map((banner) => (
             <div
             key={banner.id}
             style={{ backgroundColor: banner.bgColor }}
-            className="p-8 rounded-lg flex flex-col justify-start items-start w-[570px] h-[270px]"
+            className="p-8 rounded-lg flex flex-col w-[587px] h-[270px]"
           >
               <Image
                 src={banner.image} 

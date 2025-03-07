@@ -1,7 +1,7 @@
 const DiscountBanner = () => {
   return (
     <div>
-      <div className="w-[870px] h-[74px] bg-instacart-rose-light px-6 rounded-lg flex flex-col sm:flex-row items-center justify-center gap-8">
+      <div className="w-[full] h-[74px] bg-instacart-rose-light px-6 rounded-lg flex flex-col sm:flex-row items-center justify-center gap-8">
         <div className="flex items-center">
           <span className="text-instacart-rose font-regular mr-1">
             Super discount for your

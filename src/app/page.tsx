@@ -10,7 +10,68 @@ import DownloadApp from "@/components/DownloadApp"
 import Banner from "@/components/Banner";
 import HeroSlider from "@/components/HeroSlider";
 import ProductList from "@/components/ProductList";
+import BannerCards from "@/components/BannerCards";
 
+
+const banners: Banner[] = [
+  
+    {
+      id: 1,
+      title: "Legumes & Cereals",
+      subTitle: "Weekend Discount 40%",
+      description: "Feed your family the best",
+      image: "/images/winter-sale.jpg",
+      link: "/shop now",
+      bgColor: "#C4C4C4",
+    },
+    {
+      id: 2,
+      title: "Dairy & Eggs",
+      subTitle: "Weekend Discount 40%",
+      description: "A different kind of grocery store",
+      image: "/images/winter-sale.jpg",
+      link: "/shop now",
+      bgColor: "#C4C4C4",
+    },{
+    id: 3,
+    title: "Cookie and Ice Cream",
+    subTitle: "Weekend Discount 40%",
+    description: "Up to 50% off on all products!",
+    image: "/images/winter-sale.jpg",
+    link: "/shop now",
+    bgColor: "#A2D1D6",
+  },
+
+  {
+    id: 4,
+    title: "Natural Eggs",
+    subTitle: "Weekend Discount 40%",
+    description: "Eat one every day",
+    image: "/images/winter-sale.jpg",
+    link: "/shop now",
+    bgColor: "#C4C4C4",
+  },
+  {
+    id: 5,
+    title: "Taste the Best",
+    subTitle: "Weekend Discount 40%",
+    description: "Shine the morning",
+    image: "/images/winter-sale.jpg",
+    link: "/shop now",
+    bgColor: "#C4C4C4",
+  },
+  {
+    id: 6,
+    title: "Ditch the Junk",
+    subTitle: "Weekend Discount 40%",
+    description: "Breakfast made better",
+    image: "/images/winter-sale.jpg",
+    link: "/shop now",
+    bgColor: "#C4C4C4",
+  },
+  
+
+];
 
 
 const home1Products = [
@@ -116,10 +177,13 @@ const home1Products = [
           <HotProduct />
           <DiscountBanner />
           <ProductList products={home1Products} />
+          <BannerCards banners={banners.slice(0,2)} />
         </div>
       </div>
-      <div className="w-full p-10">
+      <div>
+      
       <GroceryCategoriesGrid />
+
       </div>
          
     </div>

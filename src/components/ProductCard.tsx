@@ -91,3 +91,63 @@ const ProductCard = ({
   );
 };
 export default ProductCard;
+// import { Star } from "lucide-react"
+// import Image from "next/image"
+// import Link from "next/link"
+
+// interface ProductCardProps {
+//   id: number
+//   title: string
+//   price?: number
+//   originalPrice?: number
+//   discount?: number
+//   rating: number
+//   reviews: number
+//   image: string
+// }
+
+// const ProductCard = ({ id, title, price, originalPrice, discount, rating, reviews, image }: ProductCardProps) => {
+//   return (
+//     <div className="group relative flex h-full flex-col overflow-hidden rounded-lg border border-gray-200 bg-white p-4 hover:shadow-md transition-shadow">
+//       {discount && (
+//         <div className="absolute left-4 top-4 z-10 rounded bg-red-500 px-2 py-1 text-xs font-semibold text-white">
+//           {discount}% OFF
+//         </div>
+//       )}
+
+//       <Link href={`/product/${id}`} className="relative block h-48 w-full overflow-hidden rounded-md mb-4">
+//         <Image
+//           src={image || "/placeholder.svg"}
+//           alt={title}
+//           fill
+//           className="object-contain transition-transform duration-300 group-hover:scale-105"
+//         />
+//       </Link>
+
+//       <div className="flex flex-col flex-grow">
+//         <div className="flex items-center mb-2">
+//           {[...Array(5)].map((_, i) => (
+//             <Star
+//               key={i}
+//               className={`h-4 w-4 ${i < rating ? "fill-yellow-400 text-yellow-400" : "fill-gray-200 text-gray-200"}`}
+//             />
+//           ))}
+//           <span className="ml-2 text-xs text-gray-500">({reviews})</span>
+//         </div>
+
+//         <h3 className="mb-2 flex-grow text-sm font-medium line-clamp-2">
+//           <Link href={`/product/${id}`}>{title}</Link>
+//         </h3>
+
+//         <div className="flex items-center">
+//           {originalPrice && (
+//             <span className="mr-2 text-xs text-gray-500 line-through">${originalPrice.toFixed(2)}</span>
+//           )}
+//           {price && <span className="text-base font-semibold text-gray-900">${price.toFixed(2)}</span>}
+//         </div>
+//         </div>
+//         </div>
+//  )
+// }
+
+// export default ProductCard

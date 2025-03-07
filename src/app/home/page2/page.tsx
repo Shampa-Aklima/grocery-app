@@ -60,6 +60,25 @@ const banners: Banner[] = [
     link: "/shop now",
     bgColor: "#C4C4C4",
   },
+  {
+    id: 5,
+    title: "Legumes & Cereals",
+    subTitle: "Weekend Discount 40%",
+    description: "Feed your family the best",
+    image: "/images/winter-sale.jpg",
+    link: "/shop now",
+    bgColor: "#C4C4C4",
+  },
+  {
+    id: 6,
+    title: "Dairy & Eggs",
+    subTitle: "Weekend Discount 40%",
+    description: "A different kind of grocery store",
+    image: "/images/winter-sale.jpg",
+    link: "/shop now",
+    bgColor: "#9B9BB4",
+  },
+
 ];
 
 const products = [
@@ -167,7 +186,7 @@ const blogs:Blog[] = [
 const Page2 = () => {
   return (
     <div className="container max-w-[1200px] mx-auto">
-      <div className="w-full mt-5">
+      <div className="w-full mt-2">
         <HeroSlider />{" "}
       </div>
       <div className="flex justify-between gap-3 w-full h-[125px] bg-[#F8EFEA] rounded-md p-12">

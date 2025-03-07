@@ -1,24 +1,24 @@
-"use client";
+"use client"
 
-import { ChevronLeft, ChevronRight } from "lucide-react";
-import { Swiper, SwiperSlide } from "swiper/react";
-import { Navigation } from "swiper/modules";
-import ProductCard from "./ProductCard";
-import "swiper/css";
-import "swiper/css/navigation";
-import "swiper/swiper-bundle.css";
-import type { Swiper as SwiperType } from "swiper";
-import { useState } from "react";
+import { ChevronLeft, ChevronRight } from "lucide-react"
+import { Swiper, SwiperSlide } from "swiper/react"
+import { Navigation } from "swiper/modules"
+import ProductCard from "./ProductCard"
+import "swiper/css"
+import "swiper/css/navigation"
+import "swiper/swiper-bundle.css"
+import type { Swiper as SwiperType } from "swiper"
+import { useState, useRef } from "react"
 
 interface Product {
-  id: number,
-  title: string,
-  price?: number,
-  originalPrice?: number,
-  discount?: number,
-  rating: number,
-  reviews: number,
-  image: string,
+  id: number
+  title: string
+  price?: number
+  originalPrice?: number
+  discount?: number
+  rating: number
+  reviews: number
+  image: string
 }
 
 const bestSellers: Product[] = [
@@ -60,24 +60,34 @@ const bestSellers: Product[] = [
     reviews: 1,
     image: "/placeholder.svg?height=220&width=220",
   },
-];
+  
+]
 
 const BestSellers = () => {
-  const [swiper, setSwiper] = useState<SwiperType | null>(null);
+  const [swiper, setSwiper] = useState<SwiperType | null>(null)
+  const prevRef = useRef<HTMLButtonElement>(null)
+  const nextRef = useRef<HTMLButtonElement>(null)
 
   return (
-    <div className="mb-10 p-10">
-      <h3>Best Sellers</h3>
-      <p className="text-xs text-gray-500 mb-4">
-        Dont miss this opportunity at a special discount just for this week.
-      </p>
+    <div className="mb-10 mt-10">
+      <h3 className="text-xl font-dosis font-bold uppercase">Best Sellers</h3>
+      <p className="text-xs text-[#9B9BB4] mb-4">Dont miss this opportunity at a special discount just for this week.</p>
 
       <div className="relative mx-auto" style={{ width: "1170px" }}>
         <Swiper
           modules={[Navigation]}
           spaceBetween={16}
           slidesPerView={4}
-          onSwiper={setSwiper}
+          onSwiper={(swiperInstance) => {
+            setSwiper(swiperInstance)
+            // Override navigation
+            if (prevRef.current && nextRef.current) {
+              swiperInstance.navigation.prevEl = prevRef.current
+              swiperInstance.navigation.nextEl = nextRef.current
+              swiperInstance.navigation.init()
+              swiperInstance.navigation.update()
+            }
+          }}
           className="!overflow-visible"
         >
           {bestSellers.map((product) => (
@@ -90,7 +100,7 @@ const BestSellers = () => {
         </Swiper>
 
         <button
-          onClick={() => swiper?.slidePrev()}
+          ref={prevRef}
           className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 w-8 h-8 bg-white shadow-md rounded-full flex items-center justify-center z-20 hover:bg-gray-50 transition-colors"
           aria-label="Previous slide"
         >
@@ -98,7 +108,7 @@ const BestSellers = () => {
         </button>
 
         <button
-          onClick={() => swiper?.slideNext()}
+          ref={nextRef}
           className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 w-8 h-8 bg-white shadow-md rounded-full flex items-center justify-center z-20 hover:bg-gray-50 transition-colors"
           aria-label="Next slide"
         >
@@ -106,7 +116,8 @@ const BestSellers = () => {
         </button>
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default BestSellers;
+export default BestSellers
+

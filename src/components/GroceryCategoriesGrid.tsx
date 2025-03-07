@@ -18,8 +18,8 @@ const categories: Category[] = [
 
 const GroceryCategoriesGrid: React.FC = () => {
   return (
-    <div className="max-w-[1200px]">
-      <div className="w-full mt-6 px-4">
+    <div>
+      <div className="w-6xl m-10 px-4">
         <div>
             <GroceryCategories categories={categories} />
         </div>
